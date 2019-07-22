@@ -1,23 +1,36 @@
 import React, {Component} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator} from 'react-navigation';
 
 //Screens
-import ProfileStackView from './ProfileStackView';
-import ExploreStackView from './ExploreStackView';
-import MyActivitiesStackView from './MyActivitiesStackView';
+import ProfileStackNavigator from './ProfileStackNavigator';
+import ExploreStackNavigator from './ExploreStackNavigator';
+import MyActivitiesStackNavigator from './MyActivitiesStackNavigator';
 
 
-const TabNavigator = createBottomTabNavigator({
-    Explore: ExploreStackView,
-    MyActivity: {
-      screen: MyActivitiesStackView,
+export default TabNavigator = createBottomTabNavigator(
+  // 3 pestanhas del navigator
+  {
+    Explore: {
+      screen: ExploreStackNavigator,
       navigationOptions: {
-        title: "My Activities",
+        title: "Explorar",
       }
     },
-    Profile: ProfileStackView,
+    MyActivity: {
+      screen: MyActivitiesStackNavigator,
+      navigationOptions: {
+        title: "Mis Actividades",
+      }
+    },
+    Profile: {
+      screen: ProfileStackNavigator,
+      navigationOptions: {
+        title: "Perfil",
+      }
+    },
   },
+  // Opciones de dibujo
   {
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
@@ -47,15 +60,3 @@ const TabNavigator = createBottomTabNavigator({
   }
 );
   
-const AppContainer = createAppContainer(TabNavigator);
-
-export default class Layout extends Component{
-    
-    render(){
-        return (
-            <AppContainer></AppContainer>
-        )
-    }
-    
-};
-

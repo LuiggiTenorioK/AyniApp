@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
 import { createStackNavigator } from "react-navigation";
-import MyActivitiesView from "./Profile/ProfileView";
+import ExploreView from "../views/Explore/ExploreView";
 
 export default createStackNavigator({
-  MyActivities: {
-    screen: MyActivitiesView,
+  Explore: {
+    screen: ExploreView,
     navigationOptions: {
-      title: 'My Activities',
+      title: 'Explorar',
     }
   }
 });

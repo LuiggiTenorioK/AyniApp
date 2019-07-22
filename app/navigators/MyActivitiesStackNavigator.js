@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
 import { createStackNavigator } from "react-navigation";
-import ProfileView from "./Profile/ProfileView";
+import MyActivitiesView from "../views/MyActivities/MyActivitiesView";
 
 export default createStackNavigator({
-  Profile: {
-    screen: ProfileView,
+  MyActivities: {
+    screen: MyActivitiesView,
     navigationOptions: {
-      title: 'Profile',
+      title: 'Mis Actividades',
     }
   }
 });
