@@ -1,12 +1,13 @@
-import {LOGIN_SUCCESS, LOGIN_FAIL, LOGIN, SIGNUP, SIGNUP_SUCCESS, SIGNUP_FAIL} from './actions';
+import {LOGIN_SUCCESS, LOGIN_FAIL, LOGIN, SIGNUP, SIGNUP_SUCCESS, SIGNUP_FAIL, LOGOUT} from './actions';
 
 const initialState = {
     isFetching: false,
     isSignIn: false,
     token: '',
     idUser: -1,
-    error: '',
-    response: ''
+    username: '',
+    lastStatus: 200,
+    lastError: ''
 };
 
 export default function reducer (state = initialState, action) {
@@ -14,11 +15,7 @@ export default function reducer (state = initialState, action) {
         case LOGIN:
             return {
                 ...state,
-                isFetching: true,
-                isSignIn: false,
-                token: '',
-                error: '',
-                response: ''
+                isFetching: true
             };
         case LOGIN_SUCCESS:
             return {
@@ -27,26 +24,32 @@ export default function reducer (state = initialState, action) {
                 isSignIn: true,
                 token: action.payload.token,
                 idUser: action.payload.id,
-                error: '',
-                response: JSON.stringify(action.payload)
+                username: action.payload.username,
+                lastStatus: action.status,
+                lastError: '',
             };
         case LOGIN_FAIL:
-            return {
-                ...state,
-                isFetching: false,
-                isSignIn: false,
-                token: '',
-                error: JSON.stringify(action.error),
-                response: JSON.stringify(action.error)
+            if(action.status===520){
+                return {
+                    ...state,
+                    isFetching: false,
+                    isSignIn: false,
+                    lastStatus: action.status,
+                    lastError: JSON.stringify(action.error),
+                };
+            }else{
+                return {
+                    ...state,
+                    isFetching: false,
+                    isSignIn: false,
+                    lastStatus: action.status,
+                    lastError: JSON.stringify(action.payload),
+                };
             };
         case SIGNUP:
             return {
                 ...state,
                 isFetching: true,
-                isSignIn: false,
-                token: '',
-                error: '',
-                response: ''
             };
         case SIGNUP_SUCCESS:
             return {
@@ -55,17 +58,38 @@ export default function reducer (state = initialState, action) {
                 isSignIn: true,
                 token: action.payload.token,
                 idUser: action.payload.id,
-                error: '',
-                response: JSON.stringify(action.payload)
+                username: action.payload.username,
+                lastStatus: action.status,
+                lastError: '',
             };
         case SIGNUP_FAIL:
+            if(action.status===520){
+                return {
+                    ...state,
+                    isFetching: false,
+                    isSignIn: false,
+                    lastStatus: action.status,
+                    lastError: JSON.stringify(action.error),
+                };
+            }else{
+                return {
+                    ...state,
+                    isFetching: false,
+                    isSignIn: false,
+                    lastStatus: action.status,
+                    lastError: JSON.stringify(action.payload),
+                };
+            };
+        case LOGOUT:
             return {
                 ...state,
                 isFetching: false,
                 isSignIn: false,
                 token: '',
-                error: JSON.stringify(action.error),
-                response: JSON.stringify(action.error)
+                idUser: -1,
+                username: '',
+                lastStatus: 200,
+                lastError: ''
             };
         default:
             return state;

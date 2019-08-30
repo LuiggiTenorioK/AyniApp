@@ -1,0 +1,1 @@
+export default url = 'http://200.16.7.181:9994/';

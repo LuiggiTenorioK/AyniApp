@@ -1,3 +1,5 @@
+import url from '../../url';
+
 export const GET_USER = 'user/GET_USER';
 export const GET_USER_SUCCESS = 'user/GET_USER_SUCCESS';
 export const GET_USER_FAIL = 'user/GET_USER_FAIL';
@@ -11,7 +13,7 @@ export function getUser(id, token) {
     return {
         types: [GET_USER, GET_USER_SUCCESS, GET_USER_FAIL],
         promise: {
-            url: 'http://181.64.70.130:9994/api/users/'+id.toString(),
+            url: url+'api/users/'+id.toString(),
             method: 'GET',
             headers: headers
         }

@@ -1,3 +1,5 @@
+import url from '../../url';
+
 export const LOGIN = 'auth/LOGIN';
 export const LOGIN_SUCCESS = 'auth/LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'auth/LOGIN_FAIL';
@@ -6,7 +8,7 @@ export function login(data) {
     return {
         types: [LOGIN, LOGIN_SUCCESS, LOGIN_FAIL],
         promise: {
-            url: 'http://181.64.70.130:9994/api/login',
+            url: url+'api/login',
             method: 'POST',
             body: JSON.stringify(data),
             headers:{
@@ -24,12 +26,21 @@ export function signup(data) {
     return {
         types: [SIGNUP, SIGNUP_SUCCESS, SIGNUP_FAIL],
         promise: {
-            url: 'http://181.64.70.130:9994/api/signup',
+            url: url+'api/signup',
             method: 'POST',
             body: JSON.stringify(data),
             headers:{
                 'Content-Type': 'application/json'
             }
         }
+    }
+}
+
+
+export const LOGOUT = 'auth/LOGOUT';
+
+export function logout() {
+    return {
+        type: LOGOUT
     }
 }
