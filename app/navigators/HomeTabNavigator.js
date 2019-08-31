@@ -56,6 +56,7 @@ export default TabNavigator = createBottomTabNavigator(
         height: 65,
         padding: 10,
       },
+      keyboardHidesTabBar: true, 
     }
   }
 );

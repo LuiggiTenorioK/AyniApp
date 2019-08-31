@@ -7,13 +7,11 @@ class ConfigurationView extends Component{
     render(){
         return (
             <View style={{alignItems:'stretch'}}>
-                <Text style={styles.text} onPress={() =>this.props.navigation.navigate('Auth')}>Login</Text>
+                <Text style={styles.text} onPress={() =>this.props.navigation.navigate('Login')}>Login</Text>
                 <View style={{backgroundColor:'#cccccc', height:2}}></View>
                 <Text style={styles.text} onPress={() =>this.props.navigation.navigate('Explore')}>Explore</Text>
-                <Image
-                    style={{width: 50, height: 50,backgroundColor:'#cccccc'}}
-                    source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png'}}
-                />
+                <View style={{backgroundColor:'#cccccc', height:2}}></View>
+                <Text style={{...styles.text,color: '#8B0000',}} onPress={() =>this.props.navigation.navigate('Auth')}>Salir</Text>
             </View>
         )
     }

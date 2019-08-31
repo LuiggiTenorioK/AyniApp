@@ -44,8 +44,9 @@ export default class UserProfile extends Component{
 
                 <Text style={{ ...styles.title, marginTop: 20, marginBottom: 5, textAlign:'left'}}>Actividades Organizadas</Text>
                 <View style={{ alignItems: 'stretch' }}>
-                    <ActivityCard title="Campaña para doggos" description="Ante la duda el que más ayuda, lallalalla asdfasdfasdfasdfasd asfsadfasdf"></ActivityCard>
-                    <ActivityCard title="Campaña para doggos 2 - La revelación de los parques" description="Ahora sin gatos"></ActivityCard>
+                    <ActivityCard title="Campaña para doggos" description="Ante la duda el que más ayuda, lallalalla asdfasdfasdfasdfasd asfsadfasdf" previewImage={'https://images-na.ssl-images-amazon.com/images/I/81cneGCkDmL.jpg'}></ActivityCard>
+                    <ActivityCard title="Campaña para doggos 2 - La revelación de los parques" description="Ahora sin gatos" previewImage={'https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg'}></ActivityCard>
+                    <ActivityCard title="Tutores de vida" description="Un programa de educación de Fundación Educa2" previewImage={'https://edu.google.com/images/social_image.jpg'}></ActivityCard>
                 </View>
 
                 <View style={{ paddingBottom: 20}}></View>

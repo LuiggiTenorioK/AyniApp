@@ -15,7 +15,7 @@ class AuthView extends Component {
                 <View style={{ flex: 3, ...styles.centerContainer }}>
                     <Text style={styles.title} onPress={() => this.props.navigation.navigate('Explore')}>Bienvenido a Ayni</Text>
                     <Text style={styles.quote}>
-                        {'Ningún acto de bondad, por más pequeño que sea, es un desperdicio \n- Esopo'}
+                        {'Ningún acto de bondad, por más pequeño que sea, es un desperdicio \n- Esopo -'}
                     </Text>
                     <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Login')} >
                         <Text style={styles.buttonText}>Entrar</Text>

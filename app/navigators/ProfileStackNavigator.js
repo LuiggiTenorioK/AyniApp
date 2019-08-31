@@ -11,5 +11,8 @@ export default createStackNavigator({
   },
   Configuration: {
     screen: ConfigurationView,
+    navigationOptions: ({ navigation }) => ({
+      headerTitle: 'Configuración',
+    })
   }
 });

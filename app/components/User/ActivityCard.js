@@ -8,16 +8,16 @@ export default class ActivityCard extends Component{
     render(){
         return(
             <View style= {styles.card}>
-                <View style={{flex:4, justifyContent:'space-around',margin:5}}>
+                <View style={{flex:5, justifyContent:'space-around',margin:5}}>
                     <Text numberOfLines={2} style={styles.titleText}>{this.props.title}</Text>
                     <Text numberOfLines={3} style={styles.descriptionText}>{this.props.description}</Text>
                     <TouchableOpacity style={styles.button}>
                         <Text style = {styles.buttonText}>Ver más</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{flex:3, backgroundColor:'#cccccc',borderRadius:20, margin:10}}>
+                <View style={{flex:4, backgroundColor:'#cccccc',borderRadius:20, margin:10}}>
                     <Image style={styles.image} 
-                        source={{uri:'https://facebook.github.io/react-native/img/tiny_logo.png'}}></Image>
+                        source={{uri: this.props.previewImage}}></Image>
                 </View>
                 
             </View>
@@ -34,8 +34,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     image:{
-        width:100,
-        height:100,
+        flex:1,
+        width:null,
+        height:null,
         borderRadius:15,
     },
     titleText:{
