@@ -1,70 +1,76 @@
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, View, TextInput,TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, Image, Button,TouchableOpacity} from 'react-native';
 
-export default class AuthView extends Component{
-
-    render(){
-      return (
-        <View style= {styles.container}>
-          <TextInput style={styles.inputBox}
-                onChangeText={(email) => this.setState({email})}
-                underlineColorAndroid='rgba(0,0,0,0)' 
-                placeholder="Email"
-                placeholderTextColor = "#002f6c"
-                selectionColor="#fff"
-                keyboardType="email-address"
-                onSubmitEditing={()=> this.password.focus()}/>
-                
-                <TextInput style={styles.inputBox}
-                onChangeText={(password) => this.setState({password})} 
-                underlineColorAndroid='rgba(0,0,0,0)' 
-                placeholder="Password"
-                secureTextEntry={true}
-                placeholderTextColor = "#002f6c"
-                ref={(input) => this.password = input}
-                />
- 
-                <TouchableOpacity style={styles.button}> 
-                    <Text style={styles.buttonText} onPress={() =>this.props.navigation.navigate('Home')}>Login</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.button}> 
-                    <Text style={styles.buttonText} onPress={() =>this.props.navigation.navigate('Signup')}>Signup</Text>
-                </TouchableOpacity>
-        </View>
-      )
+class AuthView extends Component {
+    render() {
+        return (
+            <View style={{ flex: 1 }}>
+                <View style={{ flex: 4, backgroundColor: "#7cd7d7", ...styles.centerContainer }}>
+                    <View style={{ flex: 1, backgroundColor: '#cccccc' }}></View>
+                    <View style={{ flex: 3, ...styles.centerContainer }}>
+                        <Image style={{ ...styles.image }} 
+                            source={require('../../assets/images/solidarity.png')}></Image>
+                    </View>
+                </View>
+                <View style={{ flex: 3, ...styles.centerContainer }}>
+                    <Text style={styles.title} onPress={() => this.props.navigation.navigate('Explore')}>Bienvenido a Ayni</Text>
+                    <Text style={styles.quote}>
+                        {'Ningún acto de bondad, por más pequeño que sea, es un desperdicio \n- Esopo'}
+                    </Text>
+                    <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Login')} >
+                        <Text style={styles.buttonText}>Entrar</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Signup')} >
+                        <Text style={styles.buttonText}>Registrate</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        )
     }
-    
-};
-
+}
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#ffffff',
+    centerContainer: {
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    inputBox: {
-        width: 300,
-        backgroundColor: '#eeeeee', 
-        borderRadius: 25,
-        paddingHorizontal: 16,
-        fontSize: 16,
-        color: '#002f6c',
-        marginVertical: 10
+    image: {
+        width: 210,
+        height: 210,
+        padding: 40
+    },
+    title: {
+        textAlign: 'center',
+        color: '#444444',
+        fontSize: 24,
+        fontFamily: 'Lato-Regular',
+        paddingHorizontal: 40,
+        paddingBottom:20
+    },
+    quote: {
+        textAlign: 'center',
+        color: '#444444',
+        fontSize: 14,
+        fontFamily: 'Lato-Regular',
+        paddingHorizontal: 40,
+        lineHeight: 20,
+        paddingBottom:10
     },
     button: {
+        borderRadius:10,
+        backgroundColor:'#7cd7d7',
+        height: 45,
         width: 300,
-        backgroundColor: '#4f83cc',
-        borderRadius: 25,
-        marginVertical: 10,
-        paddingVertical: 12
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 5
     },
     buttonText: {
-        fontSize: 16,
-        fontWeight: '500',
+        textAlign: 'center',
         color: '#ffffff',
-        textAlign: 'center'
+        fontFamily: 'Lato-Bold',
+        fontSize: 18,
     }
 });
+
+export default AuthView;

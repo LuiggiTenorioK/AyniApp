@@ -7,6 +7,7 @@ export default MySwitchNavigator = createSwitchNavigator(
     {
         Home: HomeTabNavigator,
         Auth: AuthStackNavigator,
+        
     },
     {
         initialRouteName: 'Auth',
