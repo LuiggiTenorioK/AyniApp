@@ -1,4 +1,4 @@
-import {LOGIN_SUCCESS, LOGIN_FAIL, LOGIN, SIGNUP, SIGNUP_SUCCESS, SIGNUP_FAIL, LOGOUT} from './actions';
+import {LOGIN_SUCCESS, LOGIN_FAIL, LOGIN, SIGNUP, SIGNUP_SUCCESS, SIGNUP_FAIL, LOGOUT, VERIFYTOKEN,VERIFYTOKEN_SUCCESS,VERIFYTOKEN_FAIL} from './actions';
 
 const initialState = {
     isFetching: false,
@@ -83,13 +83,29 @@ export default function reducer (state = initialState, action) {
         case LOGOUT:
             return {
                 ...state,
-                isFetching: false,
-                isSignIn: false,
-                token: '',
-                idUser: -1,
-                username: '',
-                lastStatus: 200,
-                lastError: ''
+                ...initialState
+            };
+        case VERIFYTOKEN:
+            return {
+                ...state,
+                isFetching: true
+            };
+        case VERIFYTOKEN_SUCCESS:
+            if (action.payload.valid){
+                return{
+                    ...state,
+                    isFetching: false,
+                }
+            }else{
+                return {
+                    ...state,
+                    ...initialState
+                };
+            }
+        case VERIFYTOKEN_FAIL:
+            return {
+                ...state,
+                ...initialState
             };
         default:
             return state;

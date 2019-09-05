@@ -20,7 +20,9 @@ class SignupView extends Component{
             name: this.state.name,
             username: this.state.username
         });
-        this.props.navigation.navigate('Home');
+        if (this.props.isSignIn){
+            this.props.navigation.navigate('Home');
+        }
     };
 
     render(){

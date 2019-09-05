@@ -17,7 +17,9 @@ class LoginView extends Component {
             password: this.state.password,
             remember: false
         });
-        this.props.navigation.navigate('Home');
+        if (this.props.isSignIn){
+            this.props.navigation.navigate('Home');
+        }
     };
 
     render() {
@@ -58,6 +60,7 @@ const mapStateToProp = state => {
     return {
         isFetching: state.auth.isFetching,
         token: state.auth.token,
+        isSignIn: state.auth.isSignIn,
         errorMsg: state.auth.error,
         responseStatus: state.auth.response
     };

@@ -3,11 +3,7 @@ import {GET_USER, GET_USER_SUCCESS, GET_USER_FAIL} from './actions';
 const initialState = {
     isFetching: false,
     users: [],
-    selectedUser: {
-        name: '',
-        username: '',
-        email: ''
-    }
+    selectedUser: null
 }
 
 export default function reducer (state = initialState, action) {
@@ -16,31 +12,19 @@ export default function reducer (state = initialState, action) {
             return {
                 ...state,
                 isFetching: true,
-                selectedUser:{
-                    name: '',
-                    username: '',
-                    email: ''
-                }
+                selectedUser:null
             };
         case GET_USER_SUCCESS:
             return {
                 ...state,
                 isFetching: false,
-                selectedUser:{
-                    name: action.payload.name,
-                    username: action.payload.username,
-                    email: action.payload.email
-                }
+                selectedUser: action.payload
             };
         case GET_USER_FAIL:
             return {
                 ...state,
                 isFetching: false,
-                selectedUser:{
-                    name: 'user-error',
-                    username: 'user-error',
-                    email: 'user-error'
-                }
+                selectedUser:null
             };
         default:
             return state;

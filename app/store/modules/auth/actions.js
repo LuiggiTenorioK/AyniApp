@@ -44,3 +44,22 @@ export function logout() {
         type: LOGOUT
     }
 }
+
+
+export const VERIFYTOKEN = 'auth/VERIFYTOKEN';
+export const VERIFYTOKEN_SUCCESS = 'auth/VERIFYTOKEN_SUCCESS';
+export const VERIFYTOKEN_FAIL = 'auth/VERIFYTOKEN_FAIL';
+
+export function verifyToken(data) {
+    return {
+        types: [VERIFYTOKEN, VERIFYTOKEN_SUCCESS, VERIFYTOKEN_FAIL],
+        promise: {
+            url: url+'api/verifyToken',
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }
+    }
+}

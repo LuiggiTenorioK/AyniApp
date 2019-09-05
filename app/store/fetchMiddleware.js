@@ -3,7 +3,10 @@ export default function fetchMiddleware({ dispatch, getState }) {
         const { promise , types, ...rest } = action;
 
         if (!promise) {
-            return next(action);
+            console.log('no promise');
+            _tmp = next(action)
+            console.log(_tmp);
+            return _tmp;
         }
 
         const [REQUEST, SUCCESS, FAILURE] = types;

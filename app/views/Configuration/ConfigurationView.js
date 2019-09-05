@@ -4,6 +4,11 @@ import {connect} from 'react-redux';
 
 
 class ConfigurationView extends Component{
+
+    pressLogout = () => {
+        this.props.logout();
+        this.props.navigation.navigate('Splash');
+    };
     render(){
         return (
             <View style={{alignItems:'stretch'}}>
@@ -11,7 +16,7 @@ class ConfigurationView extends Component{
                 <View style={{backgroundColor:'#cccccc', height:2}}></View>
                 <Text style={styles.text} onPress={() =>this.props.navigation.navigate('Explore')}>Explore</Text>
                 <View style={{backgroundColor:'#cccccc', height:2}}></View>
-                <Text style={{...styles.text,color: '#8B0000',}} onPress={() =>this.props.navigation.navigate('Auth')}>Salir</Text>
+                <Text style={{...styles.text,color: '#8B0000',}} onPress={()=>this.pressLogout()}>Salir</Text>
             </View>
         )
     }
@@ -28,4 +33,14 @@ const styles = StyleSheet.create({
 
 });
 
-export default (ConfigurationView);
+
+import {logout} from '../../store/modules/auth/actions';
+const mapDispatchToProp = dispatch => {
+    return {
+        logout: () => {
+            dispatch(logout());
+        }
+    };
+}
+
+export default connect((state)=>{return{}}, mapDispatchToProp)(ConfigurationView);
