@@ -6,7 +6,11 @@ export default class MyActivitiesView extends Component{
     render(){
       const { routeName } = this.props.navigation.state;
       return (
-        <Text>You're in {routeName}</Text>
+        <View>
+          <Text>You're in {routeName}</Text>
+          <Text onPress={()=>this.props.navigation.navigate({routeName:'Organization',params: {id:2},key:'Org2'})}> a</Text>
+        </View>
+        
       )
     }
     

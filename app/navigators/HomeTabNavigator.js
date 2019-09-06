@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { createBottomTabNavigator} from 'react-navigation';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { createMaterialTopTabNavigator} from 'react-navigation';
 
 //Screens
 import ProfileStackNavigator from './ProfileStackNavigator';
@@ -8,13 +8,13 @@ import ExploreStackNavigator from './ExploreStackNavigator';
 import MyActivitiesStackNavigator from './MyActivitiesStackNavigator';
 
 
-export default TabNavigator = createBottomTabNavigator(
+export default TabNavigator = createMaterialTopTabNavigator(
   // 3 pestanhas del navigator
   {
     Explore: {
       screen: ExploreStackNavigator,
       navigationOptions: {
-        title: "Explorar",
+        title: "Explorar"
       }
     },
     MyActivity: {
@@ -35,7 +35,6 @@ export default TabNavigator = createBottomTabNavigator(
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
-        let IconComponent = Ionicons;
         let iconName = 'ios-bug';
         if (routeName === 'Explore') {
           iconName = 'ios-compass';
@@ -46,15 +45,28 @@ export default TabNavigator = createBottomTabNavigator(
         }
 
         // You can return any component that you like here!
-        return <IconComponent name={iconName} size={30} color={tintColor} />;
+        return <Icon name={iconName} size={30} color={tintColor} />;
       },
     }),
+    tabBarPosition : 'bottom',
     tabBarOptions: {
       activeTintColor: '#7cd7d7',
-      inactiveTintColor: '#333333',
+      inactiveTintColor: '#000000',
+      upperCaseLabel: false,
+      showIcon: true,
+      labelStyle:{
+        fontFamily:'Lato-Regular',
+        fontSize: 11,
+        marginTop:5
+      },
+      indicatorStyle: {
+        opacity:0,
+        overflow: 'hidden',
+      },
       style: {
+        backgroundColor: '#ffffff',
         height: 65,
-        padding: 10,
+        padding: 5,
       },
       keyboardHidesTabBar: true, 
     }

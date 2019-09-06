@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView} from 'react-native';
+import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { ScrollView} from 'react-navigation';
 
 import HeaderCarousel from '../../components/Explore/HeaderCarousel';
 import SquareActivityCard from '../../components/Explore/SquareActivityCard';
