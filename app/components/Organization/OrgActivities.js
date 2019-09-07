@@ -28,7 +28,7 @@ class OrgActivities extends Component {
 
     render() {
         return (
-            <ScrollView contentContainerStyle={styles.container}>
+            <View style={styles.container}>
 
                 <Text style={styles.title}>{'Actividades recientes'}</Text>
                 {this.data.map( activity => (
@@ -40,7 +40,7 @@ class OrgActivities extends Component {
                     <ActivityCard key={activity.id} id={activity.id} title={activity.title} 
                         description={activity.description} organizer={activity.organizer} passed={true}/>))}
                 
-            </ScrollView>
+            </View>
         )
     }
 };

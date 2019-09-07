@@ -1,0 +1,114 @@
+import React, { Component } from 'react';
+import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions } from 'react-native';
+
+import { ScrollView } from 'react-navigation';
+import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import OrgHeader from '../../components/Organization/OrgHeader';
+import OrgHomepage from '../../components/Organization/OrgHomepage';
+import OrgActivities from '../../components/Organization/OrgActivities';
+import OrgContact from '../../components/Organization/OrgContact';
+
+const SCREEN_HEIGHT = Dimensions.get('window').height;
+
+class OrganizationView extends Component {
+
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: navigation.getParam('title', ''),
+        };
+    }
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            index: 0,
+            routes: [
+                { key: 'first', title: 'Detalles' },
+                { key: 'second', title: 'Actividades' },
+                { key: 'third', title: 'Contacto' },
+            ],
+            tabHeight: 500,
+        }
+        this.setHeight = this.setHeight.bind(this)
+        this.props.navigation.setParams({ 'title': '@Prismatic' })
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        if (this.props.navigation.getParam('title', '') != '@Prismatic')
+            this.props.navigation.setParams({ 'title': '@Prismatic' })
+    }
+
+    setHeight = () => event => {
+        const height = event.nativeEvent.layout.height + SCREEN_HEIGHT * 0.08;
+        if (this.state.tabHeight<height){
+            this.setState({ tabHeight: height })
+        }
+    };
+
+    renderTabBar = props => (
+        <TabBar {...props}
+            activeColor={'#6C28E1'}
+            inactiveColor={'#333333'}
+            indicatorStyle={styles.indicatorStyle}
+            style={styles.tabBarStyle}
+            labelStyle={styles.labelStyle}
+        />);
+
+    render() {
+        return (
+            <ScrollView style={{}}>
+                <OrgHeader></OrgHeader>
+                <TabView
+                    navigationState={this.state}
+                    renderScene={SceneMap({
+                        first: () => (
+                            <View onLayout={ this.setHeight() }>
+                                <OrgHomepage />
+                            </View>
+                        ),
+                        second: () => (
+                            <View onLayout={ this.setHeight() }>
+                                <OrgActivities />
+                            </View>
+                        ),
+                        third: () => (
+                            <View onLayout={ this.setHeight() }>
+                                <OrgContact />
+                            </View>
+                        ),
+                    })}
+                    /*renderScene={SceneMap({
+                        first: ()=>(<OrgHomepage setHeight={this.setHeight}/>),
+                        second: ()=>(<OrgActivities setHeight={this.setHeight}/>),
+                        third: ()=>(<OrgContact setHeight={this.setHeight}/>)
+                    })}*/
+                    onIndexChange={index => this.setState({ index })}
+                    initialLayout={{ width: Dimensions.get('window').width }}
+                    style={{ height: this.state.tabHeight }}
+                    renderTabBar={(props) => this.renderTabBar(props)}
+                />
+            </ScrollView>
+        )
+    }
+};
+
+export default OrganizationView;
+
+const styles = StyleSheet.create({
+    labelStyle: {
+        fontFamily: 'Lato-Bold',
+        color: '#555555',
+        fontSize: 12
+    },
+    indicatorStyle: {
+        height: 0,
+        overflow: 'hidden',
+    },
+    tabBarStyle: {
+        backgroundColor: '#ffffff',
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+        height: 50,
+        elevation: 1
+    }
+});

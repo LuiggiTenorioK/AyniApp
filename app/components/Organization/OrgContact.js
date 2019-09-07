@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView, Dimensions} from 'react-native';
+import {withNavigation} from 'react-navigation';
 
 class OrgContactView extends Component {
 
@@ -15,7 +16,7 @@ class OrgContactView extends Component {
     }
 };
 
-export default OrgContactView;
+export default withNavigation(OrgContactView);
 
 const styles = StyleSheet.create({
     container:{

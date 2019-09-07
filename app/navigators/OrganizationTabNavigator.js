@@ -10,7 +10,7 @@ import OrgContact from '../components/Organization/OrgContact';
 import OrgHeader from '../components/Organization/OrgHeader';
 import { MaterialTopTabBar } from 'react-navigation-tabs';
 
-const TabNavigator = createMaterialTopTabNavigator(
+const OrganizationTabNavigator = createMaterialTopTabNavigator(
     {
         OrgHomepage: {
             screen: OrgHomepage,
@@ -33,10 +33,10 @@ const TabNavigator = createMaterialTopTabNavigator(
     },
     // Opciones de dibujo
     {
-        tabBarComponent: props => (<Fragment>
+        /*tabBarComponent: props => (<Fragment>
             <OrgHeader></OrgHeader>
             <MaterialTopTabBar {...props}></MaterialTopTabBar>
-        </Fragment>),
+        </Fragment>),*/
         tabBarOptions: {
             activeTintColor: '#6C28E1',
             inactiveTintColor: '#333333',
@@ -62,4 +62,4 @@ const TabNavigator = createMaterialTopTabNavigator(
     }
 );
 
-export default TabNavigator;
+export default OrganizationTabNavigator;

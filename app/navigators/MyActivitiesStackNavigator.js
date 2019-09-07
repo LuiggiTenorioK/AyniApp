@@ -1,18 +1,18 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 
 import { createStackNavigator } from "react-navigation";
 import MyActivitiesView from "../views/MyActivities/MyActivitiesView";
-import OrganizationTabNavigator from '../navigators/OrganizationTabNavigator';
+import OrganizationView from '../views/Organization/OrganizationView';
 
 export default createStackNavigator({
-  MyActivities: {
-    screen: MyActivitiesView,
-    navigationOptions: {
-      title: 'Mis Actividades',
+    MyActivities: {
+        screen: MyActivitiesView,
+        navigationOptions: {
+            title: 'Mis Actividades',
+        }
+    },
+    Organization: {
+        screen: OrganizationView,
     }
-  },
-  Organization:{
-    screen: OrganizationTabNavigator,
-  }
 });
