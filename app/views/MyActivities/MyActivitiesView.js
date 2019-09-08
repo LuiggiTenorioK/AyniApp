@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View, Button} from 'react-native';
 
 export default class MyActivitiesView extends Component{
 
@@ -8,7 +8,7 @@ export default class MyActivitiesView extends Component{
       return (
         <View>
           <Text>You're in {routeName}</Text>
-          <Text onPress={()=>this.props.navigation.navigate({routeName:'Organization',params: {id:2},key:'Org2'})}> a</Text>
+          <Button onPress={()=>this.props.navigation.navigate({routeName:'Organization',params: {id:2},key:'Org2'})} title={'Organization Preview'}></Button>
         </View>
         
       )

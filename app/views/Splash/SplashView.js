@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, View} from 'react-native';
+import { Image, StyleSheet, View, Dimensions} from 'react-native';
 import {connect} from 'react-redux';
+
+const wait = (ms) => {
+    var start = new Date().getTime();
+    var end = start;
+    while(end < start + ms) {
+      end = new Date().getTime();
+   }
+ }
 
 class SplashView extends Component {
 
-    componentDidMount(){
-        // for testing
-        this.props.navigation.navigate('Organization');
+    
 
+    tokenVerification = () => {
+        // for testing
+        //this.props.navigation.navigate('Organization');
+        wait(2000);
         if (this.props.isSignIn){
             this.props.verifyToken(this.props.token);
             if (this.props.isSignIn){
@@ -18,12 +28,11 @@ class SplashView extends Component {
         }else{
             this.props.navigation.navigate('Auth');
         }
-        
     }
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={styles.container} onLayout={()=>this.tokenVerification()}>
                 <Image style={styles.logo} source={require('../../assets/images/round_logo.png')}></Image>
             </View>
         )
@@ -51,11 +60,12 @@ export default connect(mapStateToProp, mapDispatchToProp)(SplashView);
 
 const styles = StyleSheet.create({
     container: {
+        flex:1,
         alignItems: 'center',
         justifyContent: 'center',
     },
     logo: {
-        width: '50%',
-        height: '50%'
+        width: Dimensions.get('window').width*0.8,
+        height: Dimensions.get('window').width*0.8
     }
 });

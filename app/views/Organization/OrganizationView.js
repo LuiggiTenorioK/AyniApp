@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, View, Dimensions } from 'react-native';
 
 import { ScrollView } from 'react-navigation';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import OrgHeader from '../../components/Organization/OrgHeader';
 import OrgHomepage from '../../components/Organization/OrgHomepage';
-import OrgActivities from '../../components/Organization/OrgActivities';
+import OrgProjects from '../../components/Organization/OrgProjects';
 import OrgContact from '../../components/Organization/OrgContact';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -24,10 +24,10 @@ class OrganizationView extends Component {
             index: 0,
             routes: [
                 { key: 'first', title: 'Detalles' },
-                { key: 'second', title: 'Actividades' },
+                { key: 'second', title: 'Proyectos' },
                 { key: 'third', title: 'Contacto' },
             ],
-            tabHeight: 500,
+            tabHeight: SCREEN_HEIGHT*0.75-50,
         }
         this.setHeight = this.setHeight.bind(this)
         this.props.navigation.setParams({ 'title': '@Prismatic' })
@@ -68,7 +68,7 @@ class OrganizationView extends Component {
                         ),
                         second: () => (
                             <View onLayout={ this.setHeight() }>
-                                <OrgActivities />
+                                <OrgProjects />
                             </View>
                         ),
                         third: () => (
@@ -77,11 +77,6 @@ class OrganizationView extends Component {
                             </View>
                         ),
                     })}
-                    /*renderScene={SceneMap({
-                        first: ()=>(<OrgHomepage setHeight={this.setHeight}/>),
-                        second: ()=>(<OrgActivities setHeight={this.setHeight}/>),
-                        third: ()=>(<OrgContact setHeight={this.setHeight}/>)
-                    })}*/
                     onIndexChange={index => this.setState({ index })}
                     initialLayout={{ width: Dimensions.get('window').width }}
                     style={{ height: this.state.tabHeight }}
