@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#18C4B4',
         marginTop: -1 * _size / 2,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        elevation: 5
     },
     titleText: {
         textAlign: 'justify',

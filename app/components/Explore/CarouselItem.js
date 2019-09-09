@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#18C4B4',
         alignSelf: 'center',
         marginTop: -1 * Dimensions.get('window').height / 16,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        elevation:5
     },
     moreButton: {
         borderRadius: 50,
@@ -45,7 +46,8 @@ const styles = StyleSheet.create({
         width: Dimensions.get('window').height / 12,
         height: Dimensions.get('window').height / 12,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        elevation:3
     },
     titleText: {
         textAlign: 'justify',

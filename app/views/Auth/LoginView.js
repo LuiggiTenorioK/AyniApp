@@ -24,7 +24,7 @@ class LoginView extends Component {
 
     render() {
         return (
-            <View>
+            <View style={{...styles.centerContainer,flex:1,alignItems:'stretch',padding:15}}>
                 <Text>Email:</Text>
                 <TextInput 
                     onChangeText={(text) => this.setState({email: text})}
@@ -110,7 +110,8 @@ const styles = StyleSheet.create({
         width: 300,
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 5
+        marginVertical: 5,
+        alignSelf: 'center',
     },
     buttonText: {
         textAlign: 'center',

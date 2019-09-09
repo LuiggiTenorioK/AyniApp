@@ -10,6 +10,7 @@ import OrgContact from '../components/Organization/OrgContact';
 import OrgHeader from '../components/Organization/OrgHeader';
 import { MaterialTopTabBar } from 'react-navigation-tabs';
 
+// DEPRECATED
 const OrganizationTabNavigator = createMaterialTopTabNavigator(
     {
         OrgHomepage: {

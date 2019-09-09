@@ -17,7 +17,7 @@ class SplashView extends Component {
     tokenVerification = () => {
         // for testing
         //this.props.navigation.navigate('Organization');
-        wait(2000);
+        wait(100);
         if (this.props.isSignIn){
             this.props.verifyToken(this.props.token);
             if (this.props.isSignIn){

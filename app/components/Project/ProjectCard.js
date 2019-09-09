@@ -1,70 +1,71 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import {withNavigation} from 'react-navigation';
+import LinearGradient from 'react-native-linear-gradient';
 
-export default class ActivityCard extends Component {
+class ProjectCard extends Component {
     /**
      * input props: {title,description,organizer,id, active}
      */
-    activeColor = this.props.passed ? '#555555' : '#00C87A';
+    activeColor = this.props.passed ? ['#777777', '#444444'] : ['#00e1cc', 'dodgerblue'];
 
     render() {
         return (
-            <View style={{ ...styles.card, borderColor: this.activeColor }}>
+            <LinearGradient colors={this.activeColor} style={{ ...styles.card }}>
                 <View style={{ flex: 3, alignItems: 'stretch' }}>
-                    <Text style={{...styles.titleText, color: this.activeColor }}>{this.props.title}</Text>
+                    <Text style={{...styles.titleText}}>{this.props.title}</Text>
                     <Text style={styles.organizerText}>{'por @' + this.props.organizer}</Text>
                     <Text numberOfLines={8} style={styles.descriptionText}>{this.props.description}</Text>
 
                 </View>
                 <View style={{ flex: 2 }}>
-                    <TouchableOpacity style={styles.button}>
-                        <Text style={styles.buttonText}>Ir a la actividad</Text>
+                    <TouchableOpacity style={styles.button} onPress={()=>this.props.navigation.navigate({routeName:'Project',params: {id:2},key:'Proj2'})} title={'Project Preview'}>
+                        <Text style={styles.buttonText}>Ir al proyecto</Text>
                     </TouchableOpacity>
                 </View>
 
-            </View>
+            </LinearGradient>
         )
     }
 }
+
+export default withNavigation(ProjectCard);
 
 const styles = StyleSheet.create({
     card: {
         borderRadius: 10,
         backgroundColor: '#ffffff',
-        borderWidth: 2,
-        borderColor: '#00C87A',
         marginVertical: 5,
         flexDirection: 'row',
-        padding: 15,
-        elevation:5
+        padding: 15
     },
     titleText: {
         textAlign: 'justify',
-        color: '#00C87A',
+        color: '#ffffff',
         fontSize: 18,
         fontFamily: 'Lato-Bold',
         marginBottom: 5
     },
     organizerText: {
         textAlign: 'justify',
-        color: '#aaaaaa',
+        color: '#eeeeee',
         fontSize: 14,
         fontFamily: 'Lato-Regular',
         marginBottom: 5
     },
     descriptionText: {
         textAlign: 'justify',
-        color: '#555555',
+        color: '#ffffff',
         fontSize: 14,
         fontFamily: 'Lato-Regular'
     },
     button: {
         borderRadius: 10,
-        backgroundColor: '#18C4B4',
+        backgroundColor: '#6C28E1',
         alignItems: 'center',
         justifyContent: 'center',
         marginLeft: 20,
-        elevation: 3
+        elevation:3
     },
     buttonText: {
         textAlign: 'center',

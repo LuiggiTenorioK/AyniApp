@@ -9,6 +9,7 @@ export default class MyActivitiesView extends Component{
         <View>
           <Text>You're in {routeName}</Text>
           <Button onPress={()=>this.props.navigation.navigate({routeName:'Organization',params: {id:2},key:'Org2'})} title={'Organization Preview'}></Button>
+          <Button onPress={()=>this.props.navigation.navigate({routeName:'Project',params: {id:2},key:'Proj2'})} title={'Project Preview'}></Button>
         </View>
         
       )

@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity,  Dimensions} from 'react-native';
 import {ScrollView} from 'react-navigation';
-import ProjectCard from '../Project/ProjectCard';
+import ActivityCard from '../Activities/ActivityCard';
 
-class OrgActivities extends Component {
+class ProjActivities extends Component {
     data = 
     [
         {
             id:1,
-            title: "Lima Recicla: Primera Edición",
-            description: "Un proyecto sin igual ",
+            title: "Campaña para doggos",
+            description: "Ante la duda el que más ayuda, lallalalla asdfasdfasdfasdfasd asfsadfasdf",
             organizer: "lbitGreen"
         },
         {
             id:2,
-            title: "Lima Unida",
-            description: "Ante la duda el que más ayuda, lallalalla asdfasdfasdfasdfasd asfsadfasdf",
-            organizer: "moshe.exe"
+            title: "Campaña para doggos 2 - La revelación de los parques",
+            description: "Ahora sin gatos",
+            organizer: "lbitGreen"
+        },
+        {
+            id:3,
+            title: "Tutores de vida",
+            description: "Un programa de educación de Fundación Educa2",
+            organizer: "analiste"
         },
     ]; 
 
@@ -24,14 +30,14 @@ class OrgActivities extends Component {
         return (
             <View style={styles.container}>
 
-                <Text style={styles.title}>{'Proyectos recientes'}</Text>
+                <Text style={styles.title}>{'Actividades recientes'}</Text>
                 {this.data.map( activity => (
-                    <ProjectCard key={activity.id} id={activity.id} title={activity.title} 
+                    <ActivityCard key={activity.id} id={activity.id} title={activity.title} 
                         description={activity.description} organizer={activity.organizer} passed={false}/>))}
                 
-                <Text style={styles.title}>{'Proyectos pasados'}</Text>
+                <Text style={styles.title}>{'Actividades pasadas'}</Text>
                 {this.data.map( activity => (
-                    <ProjectCard key={activity.id} id={activity.id} title={activity.title} 
+                    <ActivityCard key={activity.id} id={activity.id} title={activity.title} 
                         description={activity.description} organizer={activity.organizer} passed={true}/>))}
                 
             </View>
@@ -39,7 +45,7 @@ class OrgActivities extends Component {
     }
 };
 
-export default OrgActivities;
+export default ProjActivities;
 
 const styles = StyleSheet.create({
     container:{

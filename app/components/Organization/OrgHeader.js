@@ -66,11 +66,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff'
     },
     title:{
-        fontSize: 22,
+        fontSize: 24,
         fontFamily: 'Lato-Black',
         textAlign: 'center',
         color: '#000000',
-        letterSpacing: 2
+        letterSpacing: 1
     },
     touch:{
         borderRadius:100,
