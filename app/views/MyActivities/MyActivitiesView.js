@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
       height: 60,
       width: "90%",
       padding:20,
+      elevation:3
     },
     buttonText: {
         textAlign: 'center',

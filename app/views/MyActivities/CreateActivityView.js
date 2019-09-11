@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View ,TextInput} from 'react-native';
+import {StyleSheet, Text, View ,TextInput, TouchableOpacity} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import SocialMedia from '../../components/Activities/SocialMedia';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class CreateActivityView extends Component{
     state = {
@@ -26,30 +26,14 @@ export default class CreateActivityView extends Component{
               onChangeText={(text) => this.setState({description: text})}
               placeholder="Empieza con una frase inspiradora, define cual es el alcance y objetivo de tu actividad."
           />
-          
-          <Text style= {styles.text}>Contacto</Text>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.button} onPress={() =>this.props.navigation.navigate('CreateActivityContinue')}>
+                <Icon name="md-add-circle-outline" size={30} color="#ffffff"/>
+                <Text style = {styles.buttonText}> Continuar</Text>
+            </TouchableOpacity>
+          </View>
+      
 
-          <View style={styles.contanctInfoContainer}>
-            <Text style= {styles.contanctInfoText}>Nombre de Contacto:</Text>
-            <TextInput style= {styles.contanctInfoTextInput} />
-          </View>
-          <View style={styles.contanctInfoContainer}>
-            <Text style= {styles.contanctInfoText}>Número de Teléfono:</Text>
-            <TextInput style= {styles.contanctInfoTextInput} />
-          </View>
-          <View style={styles.contanctInfoContainer}>
-            <Text style= {styles.contanctInfoText}>Correo Electrónico:</Text>
-            <TextInput style= {styles.contanctInfoTextInput} />
-          </View>
-          <View style={styles.contanctInfoContainer}>
-            <Text style= {styles.contanctInfoText}>Dirección:</Text>
-            <TextInput style= {styles.contanctInfoTextInput} />
-          </View>
-
-          <Text style= {styles.text}>Redes Sociales (Opcional)</Text>
-          <View style= { styles.socialMediaContainer}> 
-          {this.sns.map( x => (<SocialMedia name={x}/>))}
-          </View>
         </ScrollView>
       )
     }
@@ -93,44 +77,26 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding:10,
     fontFamily: 'Lato-Regular',
-    
-    
   },
-  contanctInfoContainer: {
-    flexDirection:"row",
-    justifyContent: 'space-between',
+  buttonContainer:{
+    flexDirection: 'row',
+    justifyContent:'center',
+  },
+  button: {
+    flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
+    borderRadius:10,
+    backgroundColor:'#6C28E1',
+    height: 60,
+    width: "50%",
+    padding:20,
+    elevation:3
   },
-  contanctInfoText: {
-    textAlign: 'left',
-    color: '#343F4B',
-    marginTop: 6,
-    marginBottom: 6,
-    fontSize: 12,
-    width:'40%',
-    padding:10,
-    fontFamily: 'Lato-Regular',
-  },
-  contanctInfoTextInput: {
-    textAlign: 'left',
-    color: '#343F4B',
-    marginTop: 6,
-    marginBottom: 6,
-    fontSize: 12,
-    width:'60%',
-    height:40,
-    padding:10,
-    fontFamily: 'Lato-Regular',
-    borderWidth: 2,  
-    borderColor: '#18C4B4',
-    borderRadius: 20,
-  },
-  socialMediaContainer: {
-    flexDirection:"row",
-    justifyContent: 'flex-start',
-    backgroundColor: '#ffffff',
-    
+  buttonText: {
+      textAlign: 'center',
+      color: '#ffffff',
+      fontFamily: 'Lato-Bold',
+      fontSize: 18,
   },
 
 });
