@@ -25,9 +25,9 @@ class OrgHeader extends Component {
                         </View>
                     </View>
                     <View style={{ flex: 1 ,...styles.rowContainer}}>
-                        <TouchableOpacity style={styles.touch}>
+                        {/*<TouchableOpacity style={styles.touch}>
                             <Icon name={'md-send'} size={Dimensions.get('window').width * 0.1} color={'#555555'}/>
-                        </TouchableOpacity>
+        </TouchableOpacity>*/}
                     </View>
                 </View>
                 <Text numberOfLines={1} style={styles.title}>{this.state.name}</Text>

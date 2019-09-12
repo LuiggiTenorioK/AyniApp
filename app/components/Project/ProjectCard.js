@@ -33,11 +33,11 @@ export default withNavigation(ProjectCard);
 
 const styles = StyleSheet.create({
     card: {
-        borderRadius: 10,
+        borderRadius: 20,
         backgroundColor: '#ffffff',
         marginVertical: 5,
         flexDirection: 'row',
-        padding: 15
+        padding: 20
     },
     titleText: {
         textAlign: 'justify',

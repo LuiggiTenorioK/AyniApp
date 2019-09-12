@@ -9,7 +9,7 @@ export default class HeaderCarousel extends Component {
     render() {
         return (
             <View>
-                <Carousel height={Dimensions.get('window').height * 5 / 16} delay={4000} indicatorAtBottom={false} indicatorColor="#ffffff">
+                <Carousel height={Dimensions.get('window').height * 21 / 64} delay={4000} indicatorAtBottom={false} indicatorColor="#ffffff">
                     <View>
                         <CarouselItem title="Tutores de vida" description="Un programa de educación de Fundación Educa2" previewImage={'https://edu.google.com/images/social_image.jpg'} />
                     </View>
