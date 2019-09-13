@@ -4,8 +4,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import { ScrollView } from 'react-navigation';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
-//import UserActivities from '../../components/Activities/UserActivities'; 
-//import UserProjects from '../../components/Project/UserProjects';
 import OrgProjects from '../../components/Organization/OrgProjects';
 import ProjActivities from '../../components/Project/ProjActivities';
 
@@ -52,7 +50,7 @@ class MyActivitiesView extends Component {
                         first: () => (
                             <View onLayout={ this.setHeight() } >
                                 <View style={styles.container}>
-                                  <TouchableOpacity style={styles.button} onPress={() =>this.props.navigation.navigate('CreateActivity')}>
+                                  <TouchableOpacity style={styles.button} onPress={() =>this.props.navigation.navigate('CreateActivityInfo')}>
                                       <Icon name="md-add-circle-outline" size={30} color="#ffffff"/>
                                       <Text style = {styles.buttonText}> Crear Actividad</Text>
                                   </TouchableOpacity>

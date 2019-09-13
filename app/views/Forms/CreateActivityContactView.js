@@ -5,7 +5,7 @@ import SocialMedia from '../../components/Activities/SocialMedia';
 import Map from '../../components/Activities/Map';
 
 
-export default class CreateActivityContinueView extends Component{
+export default class CreateActivityContactView extends Component{
     state = {
       name :"",
       description:"",

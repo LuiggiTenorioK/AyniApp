@@ -3,7 +3,7 @@ import {StyleSheet, Text, View ,TextInput, TouchableOpacity} from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default class CreateActivityView extends Component{
+export default class CreateActivityDescriptionView extends Component{
     state = {
       name :"",
       description:"",
@@ -27,8 +27,7 @@ export default class CreateActivityView extends Component{
               placeholder="Empieza con una frase inspiradora, define cual es el alcance y objetivo de tu actividad."
           />
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button} onPress={() =>this.props.navigation.navigate('CreateActivityContinue')}>
-                <Icon name="md-add-circle-outline" size={30} color="#ffffff"/>
+            <TouchableOpacity style={styles.button} onPress={() =>this.props.navigation.navigate('CreateActivityContact')}>
                 <Text style = {styles.buttonText}> Continuar</Text>
             </TouchableOpacity>
           </View>
@@ -80,17 +79,17 @@ const styles = StyleSheet.create({
   },
   buttonContainer:{
     flexDirection: 'row',
-    justifyContent:'center',
+    justifyContent:'flex-end',
+    margin:5
   },
   button: {
-    flexDirection: 'row',
     alignItems: 'center',
     borderRadius:10,
     backgroundColor:'#6C28E1',
     height: 60,
     width: "50%",
     padding:20,
-    elevation:3
+    elevation:3,
   },
   buttonText: {
       textAlign: 'center',
