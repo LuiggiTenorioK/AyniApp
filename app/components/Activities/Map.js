@@ -7,7 +7,14 @@ export default class Map extends Component{
     render(){
         return (
             <View style={styles.mapcontainer}>
-                <MapView style={styles.map} />
+                <MapView 
+                style={styles.map}
+                initialRegion={{
+                    latitude: -12.065214,
+                    longitude: -77.078397,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421,
+                  }} />
             </View>
             
         )

@@ -1,0 +1,45 @@
+import React, {Component} from 'react';
+import {StyleSheet, Text, View ,TouchableOpacity} from 'react-native';
+import { withNavigation } from 'react-navigation';
+
+class PurpleNavigationButton extends Component{
+
+    render(){
+      return (
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.button} onPress={this.props.function}>
+                <Text style = {styles.buttonText}>{this.props.message}</Text>
+            </TouchableOpacity>
+          </View>
+
+      )
+    };
+    
+};
+export default withNavigation(PurpleNavigationButton);
+
+const styles = StyleSheet.create({
+  
+  buttonContainer:{
+    flexDirection: 'row',
+    justifyContent:'flex-end',
+    marginHorizontal:5,
+    marginVertical: 10
+  },
+  button: {
+    alignItems: 'center',
+    borderRadius:10,
+    backgroundColor:'#6C28E1',
+    height: 60,
+    width: "40%",
+    padding:20,
+    elevation:3,
+  },
+  buttonText: {
+      textAlign: 'center',
+      color: '#ffffff',
+      fontFamily: 'Lato-Bold',
+      fontSize: 15,
+  },
+
+});

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View ,TextInput, TouchableOpacity} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/Ionicons';
+import PurpleNavigationButton from '../../components/Activities/PurpleNavigationButton';
+
 
 export default class CreateActivityDescriptionView extends Component{
     state = {
@@ -26,12 +27,9 @@ export default class CreateActivityDescriptionView extends Component{
               onChangeText={(text) => this.setState({description: text})}
               placeholder="Empieza con una frase inspiradora, define cual es el alcance y objetivo de tu actividad."
           />
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button} onPress={() =>this.props.navigation.navigate('CreateActivityContact')}>
-                <Text style = {styles.buttonText}> Continuar</Text>
-            </TouchableOpacity>
-          </View>
-      
+          <Text style= {styles.text}>Organizadores</Text>
+          <PurpleNavigationButton message ={'CONTINUAR'} function = {() =>this.props.navigation.navigate('CreateActivityContact')} />
+
 
         </ScrollView>
       )
@@ -77,25 +75,4 @@ const styles = StyleSheet.create({
     padding:10,
     fontFamily: 'Lato-Regular',
   },
-  buttonContainer:{
-    flexDirection: 'row',
-    justifyContent:'flex-end',
-    margin:5
-  },
-  button: {
-    alignItems: 'center',
-    borderRadius:10,
-    backgroundColor:'#6C28E1',
-    height: 60,
-    width: "50%",
-    padding:20,
-    elevation:3,
-  },
-  buttonText: {
-      textAlign: 'center',
-      color: '#ffffff',
-      fontFamily: 'Lato-Bold',
-      fontSize: 18,
-  },
-
 });
