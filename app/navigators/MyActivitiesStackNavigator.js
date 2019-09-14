@@ -4,6 +4,9 @@ import { Platform, StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from "react-navigation";
 import MyActivitiesView from "../views/MyActivities/MyActivitiesView";
 import OrganizationView from '../views/Organization/OrganizationView';
+import CreateActivityDescriptionView from '../views/Forms/CreateActivityDescriptionView';
+import CreateActivityContactView from '../views/Forms/CreateActivityContactView';
+import CreateActivityInfoView from '../views/Forms/CreateActivityInfoView';
 import ProjectView from '../views/Project/ProjectView';
 
 export default createStackNavigator({
@@ -15,6 +18,24 @@ export default createStackNavigator({
     },
     Organization: {
         screen: OrganizationView,
+    },
+    CreateActivityDescription: {
+        screen: CreateActivityDescriptionView,
+        navigationOptions: {
+            title: 'Crear Actividad',
+        }
+    },
+    CreateActivityContact: {
+        screen: CreateActivityContactView,
+        navigationOptions: {
+            title: 'Crear Actividad',
+        }
+    },
+    CreateActivityInfo: {
+        screen: CreateActivityInfoView,
+        navigationOptions: {
+            title: 'Crear Actividad',
+        }
     },
     Project: {
         screen: ProjectView,
