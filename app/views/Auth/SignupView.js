@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, StyleSheet, Text, View, TextInput,ActivityIndicator} from 'react-native';
+import {TouchableOpacity, StyleSheet, Text, View, TextInput,ActivityIndicator} from 'react-native';
 import {connect} from 'react-redux';
 
 import {signup} from '../../store/modules/auth/actions';
@@ -27,38 +27,43 @@ class SignupView extends Component{
 
     render(){
         return (
-            <View>
+            <View style={{ ...styles.centerContainer, flex: 1, alignItems: 'stretch', padding: 25 }}>
                 
-                <Text>Nombre completo:</Text>
-                <TextInput 
+                <Text style={styles.text}>Nombre completo:</Text>
+                <TextInput  style={styles.textInput}
                     onChangeText={(text) => this.setState({name: text})}
                     placeholder="Nombre completo"
                     onSubmitEditing={()=> this.passwordTextInput.focus()}
                 />
-                <Text>Nombre de usuario:</Text>
-                <TextInput 
+                <Text style={styles.text}>Nombre de usuario:</Text>
+                <TextInput  style={styles.textInput}
                     onChangeText={(text) => this.setState({username: text})}
                     placeholder="Nombre de usuario"
                     onSubmitEditing={()=> this.passwordTextInput.focus()}
                 />
-                <Text>Email:</Text>
-                <TextInput 
+                <Text style={styles.text}>Email:</Text>
+                <TextInput  style={styles.textInput}
                     onChangeText={(text) => this.setState({email: text})}
                     placeholder="Email"
                     keyboardType="email-address"
                     onSubmitEditing={()=> this.passwordTextInput.focus()}
                 />
-                <Text>Password:</Text>
-                <TextInput 
+                <Text style={styles.text}>Contraseña:</Text>
+                <TextInput  style={styles.textInput}
                     onChangeText={(text) => this.setState({password: text})}
-                    placeholder="Password"
+                    placeholder="Contraseña"
+                    secureTextEntry={true}
+                />
+                <Text style={styles.text}>Confirma contraseña:</Text>
+                <TextInput  style={styles.textInput}
+                    onChangeText={(text) => this.setState({password: text})}
+                    placeholder="Confirma contraseña"
                     secureTextEntry={true}
                     ref={(input) => this.passwordTextInput = input} 
                 />
-                <Button 
-                    title="Registrate"
-                    onPress={() => this.sendSignup()} 
-                />
+                <TouchableOpacity style={styles.button} onPress={() => this.sendSignup()} >
+                    <Text style={styles.buttonText}>Registrate</Text>
+                </TouchableOpacity>
                 {this.state.isFetching &&
                     <View>
                         <ActivityIndicator size='large' />
@@ -88,3 +93,46 @@ const mapDispatchToProp = dispatch => {
 }
 
 export default connect(mapStateToProp,mapDispatchToProp)(SignupView);
+
+
+const styles = StyleSheet.create({
+    centerContainer: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    button: {
+        borderRadius: 10,
+        backgroundColor: '#7cd7d7',
+        height: 45,
+        width: 300,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginVertical: 5,
+        alignSelf: 'center',
+    },
+    buttonText: {
+        textAlign: 'center',
+        color: '#ffffff',
+        fontFamily: 'Lato-Bold',
+        fontSize: 18,
+    },
+    text: {
+        textAlign: 'left',
+        color: '#343F4B',
+        marginBottom: 5,
+        fontSize: 18,
+        fontFamily: 'Lato-Bold',
+    },
+    textInput: {
+        textAlign: 'left',
+        marginTop: 10,
+        marginBottom: 15,
+        color: '#343F4B',
+        width: '100%',
+        borderWidth: 2,
+        borderColor: '#18C4B4',
+        borderRadius: 20,
+        padding: 10,
+        fontFamily: 'Lato-Regular',
+    },
+});

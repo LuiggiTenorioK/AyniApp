@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
-import { Header } from 'react-navigation';
+import { Header, withNavigation } from 'react-navigation';
 
 
 class ProjHeader extends Component {
@@ -16,7 +16,9 @@ class ProjHeader extends Component {
     render() {
         return (
             <LinearGradient colors={['#00e1cc', 'dodgerblue']} style={styles.container}>
-                <View style={{height:Header.HEIGHT}}></View>
+                <View style={{height:Header.HEIGHT,flexDirection:'row-reverse'}}>
+                    <Text style={styles.textAdm} onPress={()=>this.props.navigation.navigate('ProjectAdmin')}>Administrar</Text>
+                </View>
                 <View style={{margin: Dimensions.get('window').height * 0.02,...styles.rowContainer}}>
                     <View style={{ flex: 3 ,...styles.rowContainer}}>
                         <Text numberOfLines={2} style={styles.title}>{this.state.name}</Text>
@@ -30,7 +32,7 @@ class ProjHeader extends Component {
     }
 };
 
-export default ProjHeader;
+export default withNavigation(ProjHeader);
 
 const styles = StyleSheet.create({
     container: {
@@ -57,5 +59,12 @@ const styles = StyleSheet.create({
         fontFamily: 'Lato-Regular',
         textAlign: 'right',
         color: '#ffffff'
+    },
+    textAdm:{
+        fontSize: 14,
+        fontFamily: 'Lato-Bold',
+        textAlign: 'right',
+        color: '#ffffff',
+        margin:20,
     }
 });

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
-import { createStackNavigator } from "react-navigation";
+import { createStackNavigator, createDrawerNavigator } from "react-navigation";
 import MyActivitiesView from "../views/MyActivities/MyActivitiesView";
 import OrganizationView from '../views/Organization/OrganizationView';
 import CreateActivityDescriptionView from '../views/Forms/CreateActivityDescriptionView';
 import CreateActivityContactView from '../views/Forms/CreateActivityContactView';
 import CreateActivityInfoView from '../views/Forms/CreateActivityInfoView';
 import ProjectView from '../views/Project/ProjectView';
+import ProjectAdminView from '../views/Project/ProjectAdminView';
 
 export default createStackNavigator({
     MyActivities: {
@@ -39,9 +40,15 @@ export default createStackNavigator({
     },
     Project: {
         screen: ProjectView,
-        navigationOptions:{
+        navigationOptions: {
             headerTransparent: true
         }
-        
+
+    },
+    ProjectAdmin: {
+        screen: ProjectAdminView,
+        navigationOptions: {
+            title: 'Administrador de Proyecto',
+        }
     }
 });
