@@ -4,38 +4,31 @@ import { withNavigation } from 'react-navigation';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-class PurpleNavigationButton extends Component{
+class InscriptionButton extends Component{
 
     render(){
       return (
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button} onPress={this.props.function}>
+            <TouchableOpacity style={styles.button} >
                 <Text style = {styles.buttonText}>{this.props.message}</Text>
             </TouchableOpacity>
-          </View>
-
       )
     };
     
 };
-export default withNavigation(PurpleNavigationButton);
+export default withNavigation(InscriptionButton);
 
 const styles = StyleSheet.create({
   
-  buttonContainer:{
-    flexDirection: 'row',
-    justifyContent:'flex-end',
-    marginHorizontal:5,
-    marginVertical: 10,
-  },
   button: {
     alignItems: 'center',
+    justifyContent: 'center',
     borderRadius:10,
-    backgroundColor:'#6C28E1',
-    height: 60,
-    width: "40%",
-    padding:20,
+    backgroundColor:'#735CD1',
+    height: Dimensions.get('window').height * 0.05,
+    width: "25%",
+    padding:10,
     elevation:3,
+    margin:10
   },
   buttonText: {
       textAlign: 'center',

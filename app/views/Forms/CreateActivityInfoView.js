@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View ,TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View ,Dimensions} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import HelpInfo from '../../components/Activities/HelpInfo';
 import PurpleNavigationButton from '../../components/Activities/PurpleNavigationButton';
 
+const SCREEN_HEIGHT = Dimensions.get('window').height;
+
 export default class CreateActivityInfoView extends Component{
     colorsA= [
-        {title:'¿CÓMO PLANTEAR UN PROYECTO?',color:'#00A6FF'},
-        {title:'IDENTIFICAR SKATEHOLDERS',color:'#77D353'}];
+        {id:1,title:'¿CÓMO PLANTEAR UN PROYECTO?',color:'#00A6FF'},
+        {id:2,title:'IDENTIFICAR SKATEHOLDERS',color:'#77D353'}];
     colorsB= [
-        {title:'¿CÓMO MOTIVAR A MI EQUIPO?',color:'#7CD7D7'},
-        {title:'ELABORAR UN CRONOGRAMA',color:'#18C4B4'},];
+        {id:3,title:'¿CÓMO MOTIVAR A MI EQUIPO?',color:'#7CD7D7'},
+        {id:4,title:'ELABORAR UN CRONOGRAMA',color:'#18C4B4'},];
     colorsC= [
-        {title:'ELABORAR UN PRESUPUESTO',color:'#735CD1'},
-        {title:'PROMOCIÓN DE MI PROYECTO',color:'#00C87A'},];
+        {id:5,title:'ELABORAR UN PRESUPUESTO',color:'#735CD1'},
+        {id:6,title:'PROMOCIÓN DE MI PROYECTO',color:'#00C87A'},];
     render(){
       const { routeName } = this.props.navigation.state;
       return (
@@ -24,18 +26,18 @@ export default class CreateActivityInfoView extends Component{
             </View>
             
             <View style={styles.cardContainer} >
-                {this.colorsA.map( card => (<HelpInfo title={card.title} color={card.color} />))}
+                {this.colorsA.map( card => (<HelpInfo key={card.id} title={card.title} color={card.color} />))}
             </View>
             <View style={styles.cardContainer} >
-                {this.colorsB.map( card => (<HelpInfo title={card.title} color={card.color} />))}
+                {this.colorsB.map( card => (<HelpInfo key={card.id} title={card.title} color={card.color} />))}
             </View>
             <View style={styles.cardContainer} >
-                {this.colorsC.map( card => (<HelpInfo title={card.title} color={card.color} />))}
+                {this.colorsC.map( card => (<HelpInfo key={card.id} title={card.title} color={card.color} />))}
             </View>
             <View style= {{paddingBottom:15}}></View>
             <Text style= {styles.text}>¿Estás listo?</Text>
             <Text style= {styles.subtext}>Ha llegado el momento de crear un mundo mejor.</Text>
-            <View style= {{paddingBottom:85}}></View>
+            <View style= {{paddingBottom:80}}></View>
             <PurpleNavigationButton message ={'CONTINUAR'} function = {() =>this.props.navigation.navigate('CreateActivityDescription')} />
         </ScrollView>
       )

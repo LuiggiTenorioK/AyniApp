@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity,  Dimensions} from 'react-native';
-import {ScrollView} from 'react-navigation';
+import {  StyleSheet, Text, View, Dimensions} from 'react-native';
 import ActivityCard from '../Activities/ActivityCard';
+import { withNavigation } from 'react-navigation';
 
 class ProjActivities extends Component {
     data = 
@@ -33,19 +33,21 @@ class ProjActivities extends Component {
                 <Text style={styles.title}>{'Actividades recientes'}</Text>
                 {this.data.map( activity => (
                     <ActivityCard key={activity.id} id={activity.id} title={activity.title} 
-                        description={activity.description} organizer={activity.organizer} passed={false}/>))}
+                        description={activity.description} organizer={activity.organizer} 
+                       passed={false} /> ))}
                 
                 <Text style={styles.title}>{'Actividades pasadas'}</Text>
                 {this.data.map( activity => (
                     <ActivityCard key={activity.id} id={activity.id} title={activity.title} 
-                        description={activity.description} organizer={activity.organizer} passed={true}/>))}
+                        description={activity.description} organizer={activity.organizer} 
+                        passed={true} />))}
                 
             </View>
         )
     }
 };
 
-export default ProjActivities;
+export default withNavigation(ProjActivities);
 
 const styles = StyleSheet.create({
     container:{
