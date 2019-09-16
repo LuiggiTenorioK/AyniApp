@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-export default class ActivityCard extends Component {
+class ActivityCard extends Component {
     /**
      * input props: {title,description,organizer,id, active}
      */
@@ -17,7 +18,7 @@ export default class ActivityCard extends Component {
 
                 </View>
                 <View style={{ flex: 2 }}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={() =>this.props.navigation.navigate('Activity')}>
                         <Text style={styles.buttonText}>Ir a la actividad</Text>
                     </TouchableOpacity>
                 </View>
@@ -26,6 +27,7 @@ export default class ActivityCard extends Component {
         )
     }
 }
+export default withNavigation(ActivityCard);
 
 const styles = StyleSheet.create({
     card: {

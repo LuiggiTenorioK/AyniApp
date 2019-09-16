@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,  
     borderColor: '#18C4B4',
     borderRadius: 20,
+    
   },
   socialMediaContainer: {
     flexDirection:"row",

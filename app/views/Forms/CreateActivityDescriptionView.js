@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View ,TextInput, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View ,TextInput, Dimensions} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import PurpleNavigationButton from '../../components/Activities/PurpleNavigationButton';
+import AddOrganizeCard from '../../components/Organizer/AddOrganizeCard';
+import OrganizerCard from '../../components/Organizer/OrganizerCard';
 
+
+const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 export default class CreateActivityDescriptionView extends Component{
     state = {
       name :"",
       description:"",
     };
-    sns=['facebook','instagram','twitter','add']
+    organizers= [{id:'1',name:'Luiggi Tenorio', username:'lbitgreen'}];
     render(){
       const { routeName } = this.props.navigation.state;
       return (
@@ -28,6 +32,14 @@ export default class CreateActivityDescriptionView extends Component{
               placeholder="Empieza con una frase inspiradora, define cual es el alcance y objetivo de tu actividad."
           />
           <Text style= {styles.text}>Organizadores</Text>
+          <View style={styles.organizerContainer}>
+              {this.organizers.map( organizer => (
+                <OrganizerCard key={organizer.id} name={organizer.name} 
+                username={organizer.username}/>))}
+              <AddOrganizeCard />
+          </View>
+          
+          <View style= {{paddingBottom:65}}></View>
           <PurpleNavigationButton message ={'CONTINUAR'} function = {() =>this.props.navigation.navigate('CreateActivityContact')} />
 
 
@@ -54,6 +66,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 15,
     color: '#343F4B',
+    height: Dimensions.get('window').height * 0.07,
     width:'100%',
     borderWidth: 2,  
     borderColor: '#18C4B4',
@@ -67,12 +80,17 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 15,
     color: '#343F4B',
+    height: Dimensions.get('window').height * 0.15,
     width:'100%',
-    height:100,
     borderWidth: 2,  
     borderColor: '#18C4B4',
     borderRadius: 20,
     padding:10,
     fontFamily: 'Lato-Regular',
   },
+  organizerContainer:{
+    alignItems:'center',
+    marginHorizontal:5,
+    marginVertical:10,
+  }
 });

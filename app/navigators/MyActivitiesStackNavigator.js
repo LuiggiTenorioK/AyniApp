@@ -8,6 +8,7 @@ import CreateActivityDescriptionView from '../views/Forms/CreateActivityDescript
 import CreateActivityContactView from '../views/Forms/CreateActivityContactView';
 import CreateActivityInfoView from '../views/Forms/CreateActivityInfoView';
 import ProjectView from '../views/Project/ProjectView';
+import ActivityView from '../views/Activity/ActivityView';
 import ProjectAdminView from '../views/Project/ProjectAdminView';
 
 export default createStackNavigator({
@@ -36,6 +37,12 @@ export default createStackNavigator({
         screen: CreateActivityInfoView,
         navigationOptions: {
             title: 'Crear Actividad',
+        }
+    },
+    Activity: {
+        screen: ActivityView,
+        navigationOptions: {
+            title: 'Perfil de Actividad',
         }
     },
     Project: {

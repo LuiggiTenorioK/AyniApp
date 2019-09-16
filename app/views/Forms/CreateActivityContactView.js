@@ -1,37 +1,45 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View ,TextInput} from 'react-native';
+import {StyleSheet, Text, View ,Dimensions} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import SocialMedia from '../../components/Activities/SocialMedia';
 import Map from '../../components/Activities/Map';
 import PurpleNavigationButton from '../../components/Activities/PurpleNavigationButton';
 import ContactInfo from '../../components/Activities/ContactInfo';
 
-
+const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 export default class CreateActivityContactView extends Component{
     state = {
       name :"",
       description:"",
     };
-    sns=['facebook','instagram','twitter','add']
+  
+    sns=[
+      {id:1,name:'facebook'},
+      {id:2,name:'instagram'},
+      {id:3,name:'twitter'},
+      {id:4,name:'add'},
+    ]
+    contactInfo=[
+      {id:1,message:'Nombre de Contacto:'},
+      {id:2,message:'Número de Teléfono:'},
+      {id:3,message:'Correo Electrónico:'},
+      {id:4,message:'Dirección:'},
+    ]
     render(){
       const { routeName } = this.props.navigation.state;
       return (
         <ScrollView style={styles.container} >
           
           <Text style= {styles.text}>Contacto</Text>
-          <ContactInfo message= {'Nombre de Contacto:'}/>
-          <ContactInfo message= {'Número de Teléfono:'}/>
-          <ContactInfo message= {'Correo Electrónico:'}/>
-          <ContactInfo message= {'Dirección:'}/>
+          {this.contactInfo.map( x => (<ContactInfo key ={x.id} message={x.message}/>))}
           <Map></Map>
           <Text style= {styles.text}>Redes Sociales (Opcional)</Text>
           <View style= { styles.socialMediaContainer}> 
-          {this.sns.map( x => (<SocialMedia name={x}/>))}
+            {this.sns.map( x => (<SocialMedia key ={x.id} name={x.name}/>))}
           </View>
+          <View style= {{paddingBottom:25}}></View>
           <PurpleNavigationButton message ={'CREAR'} function = {() =>this.props.navigation.navigate('MyActivities')} />
-          <View style= {{paddingBottom:30}}></View>
-
         </ScrollView>
       )
     }
@@ -50,23 +58,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: 'Lato-Bold',
   },
-  textInput: {
-    textAlign: 'left',
-    marginTop: 10,
-    marginBottom: 15,
-    color: '#343F4B',
-    width:'100%',
-    borderWidth: 2,  
-    borderColor: '#18C4B4',
-    borderRadius: 20,
-    padding:10,
-    fontFamily: 'Lato-Regular',
-  },
   socialMediaContainer: {
     flexDirection:"row",
     justifyContent: 'flex-start',
-    backgroundColor: '#ffffff',
-    
+    backgroundColor: '#ffffff', 
   },
 
 
