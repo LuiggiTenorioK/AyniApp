@@ -5,7 +5,7 @@ import { ScrollView } from 'react-navigation';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import ActHeader from '../../components/Activities/ActHeader';
 import ActInformation from '../../components/Activities/ActInformation'; 
-import ProjActivities from '../../components/Project/ProjActivities';
+import ActNews from '../../components/Activities/ActNews';
 import ActMembers from '../../components/Activities/ActMembers';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -32,8 +32,13 @@ class ActivityView extends Component {
         contactNumber: '951888908',
         contactEmail:'lbit@gmail.com',
         contactAddress: 'Calle San Luis 679',
-        organizers: [{id:'1',name:'Luiggi Tenorio', username:'lbitgreen'},{id:'2',name:'Arian Gallardo', username:'ecofroz'}],
-        volunteers: [{id:'1',name:'Moshe Ojeda', username:'moshe'},{id:'2',name:'Daniel Alpiste', username:'daniel'}]
+        organizers: [{id:'1',name:'Luiggi Tenorio', username:'lbitgreen'},
+        {id:'2',name:'Arian Gallardo', username:'ecofroz'}],
+        volunteers: [{id:'1',name:'Moshe Ojeda', username:'moshe'},
+        {id:'2',name:'Daniel Alpiste', username:'daniel'}],
+        news:[{id:'1',name:'Luiggi Tenorio', username:'lbitgreen',
+        description:'Nuestro programa comienza en dos semanas! Aún puedes participar, si tienes alguna duda, puedes ecribirme a través del chat de Ayni :)',
+        role:'ORGANIZADOR'}]
     }
 
     setHeight = () => event => {
@@ -66,7 +71,7 @@ class ActivityView extends Component {
                         ),
                         second: () => (
                             <View onLayout={ this.setHeight() }>
-                                <ProjActivities/>
+                                <ActNews activity ={this.activity}/>
                             </View>
                         ),
                         third: () => (
