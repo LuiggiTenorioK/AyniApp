@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 class OrgHeader extends Component {
 
     state = {
-        profileImgURL: 'https://cdn2.iconfinder.com/data/icons/love-nature/600/green-Leaves-nature-leaf-tree-garden-environnement-512.png',
+        profileImgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRSN7dRBbNBB7TfL7f7IEkM_MYoTfWvXgnq5GpBb2OsWQpKzZDC',
         name: 'Prismatic',
         type: 'ONG'
     }
@@ -52,6 +52,8 @@ const styles = StyleSheet.create({
     imageContainer: {
         width: Dimensions.get('window').width * 0.3,
         height: Dimensions.get('window').width * 0.3,
+        alignItems: 'center',
+        justifyContent: 'center',
         borderRadius: 100,
         overflow: 'hidden',
         borderColor: '#6C28E1',
@@ -60,8 +62,8 @@ const styles = StyleSheet.create({
         elevation: 20,
     },
     image: {
-        width: Dimensions.get('window').width * 0.3,
-        height: Dimensions.get('window').width * 0.3,
+        width: Dimensions.get('window').width * 0.3 - 6,
+        height: Dimensions.get('window').width * 0.3 - 6,
         borderRadius: 100,
         backgroundColor: '#ffffff'
     },
