@@ -49,7 +49,8 @@ export default class CreateActivityContactView extends Component{
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#ffffff',
-    padding: 20,
+    marginHorizontal:5,
+    marginVertical: 10,
   },
   text: {
     textAlign: 'left',
@@ -62,6 +63,7 @@ const styles = StyleSheet.create({
     flexDirection:"row",
     justifyContent: 'flex-start',
     backgroundColor: '#ffffff', 
+
   },
 
 

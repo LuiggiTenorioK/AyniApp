@@ -4,6 +4,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import PurpleNavigationButton from '../../components/Activities/PurpleNavigationButton';
 import AddOrganizeCard from '../../components/Organizer/AddOrganizeCard';
 import OrganizerCard from '../../components/Organizer/OrganizerCard';
+import { Input } from 'react-native-elements';
 
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -18,18 +19,18 @@ export default class CreateActivityDescriptionView extends Component{
       const { routeName } = this.props.navigation.state;
       return (
         <ScrollView style={styles.container} >
-          <Text style= {styles.text}>Nombre de la actividad</Text>
-          <TextInput 
-            style= {styles.textInput}
+          <Text style= {styles.text}>Nombre del Proyecto</Text>
+          <Input 
+            inputStyle  = {styles.textInput}
             onChangeText={(text) => this.setState({name: text})}
-            placeholder="Define el nombre de tu actividad"
+            inputContainerStyle={styles.inputContainer}
           />
           <Text style= {styles.text}>Descripción</Text>
-          <TextInput 
-              style= {styles.textArea}
+          <Input 
+              inputStyle = {styles.textArea}
               multiline={true}
               onChangeText={(text) => this.setState({description: text})}
-              placeholder="Empieza con una frase inspiradora, define cual es el alcance y objetivo de tu actividad."
+              inputContainerStyle={styles.inputContainer}
           />
           <Text style= {styles.text}>Organizadores</Text>
           <View style={styles.organizerContainer}>
@@ -50,6 +51,10 @@ export default class CreateActivityDescriptionView extends Component{
 };
 
 const styles = StyleSheet.create({
+  inputContainer:{
+    backgroundColor: '#ffffff',
+    borderBottomColor: '#ffffff',
+  },
   container: {
     backgroundColor: '#ffffff',
     padding: 20,
@@ -66,13 +71,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 15,
     color: '#343F4B',
-    height: Dimensions.get('window').height * 0.07,
     width:'100%',
     borderWidth: 2,  
     borderColor: '#18C4B4',
     borderRadius: 20,
-    padding:10,
+    padding:15,
     fontFamily: 'Lato-Regular',
+    fontSize: 15
   },
   textArea: {
     textAlign: 'left',
@@ -80,13 +85,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 15,
     color: '#343F4B',
-    height: Dimensions.get('window').height * 0.15,
     width:'100%',
     borderWidth: 2,  
     borderColor: '#18C4B4',
     borderRadius: 20,
-    padding:10,
+    padding:15,
     fontFamily: 'Lato-Regular',
+    fontSize: 15
   },
   organizerContainer:{
     alignItems:'center',

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View ,TextInput} from 'react-native';
+import { Input } from 'react-native-elements';
 
 export default class ContactInfo extends Component{
 
@@ -7,7 +8,11 @@ export default class ContactInfo extends Component{
       return (
           <View style={styles.contanctInfoContainer}>
             <Text style= {styles.contanctInfoText}>{this.props.message}</Text>
-            <TextInput style= {styles.contanctInfoTextInput} />
+            <View style={{width:'60%'}}>
+            <Input 
+            inputStyle= {styles.contanctInfoTextInput}  
+            inputContainerStyle={styles.inputContainer}/>
+            </View>
           </View>
       )
     }
@@ -17,28 +22,26 @@ export default class ContactInfo extends Component{
 const styles = StyleSheet.create({
   contanctInfoContainer: {
     flexDirection:"row",
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
     backgroundColor: '#ffffff',
+    width:'100%',
   },
   contanctInfoText: {
     textAlign: 'left',
     color: '#343F4B',
-    marginTop: 6,
-    marginBottom: 6,
+    marginVertical: 6,
     fontSize: 12,
     width:'40%',
     padding:10,
     fontFamily: 'Lato-Regular',
+    
   },
   contanctInfoTextInput: {
     textAlign: 'left',
     color: '#343F4B',
-    marginTop: 6,
-    marginBottom: 6,
+    marginVertical: 6,
     fontSize: 12,
-    width:'60%',
-    height:40,
     padding:10,
     fontFamily: 'Lato-Regular',
     borderWidth: 2,  
@@ -55,6 +58,9 @@ const styles = StyleSheet.create({
   map:{
     width:200,
     height:200
-  }
-
+  },
+  inputContainer:{
+    backgroundColor: '#ffffff',
+    borderBottomColor: '#ffffff',
+  },
 });
