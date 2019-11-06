@@ -23,6 +23,8 @@ import { persistStore } from 'redux-persist';
 
 const persistor = persistStore(store);
 
+console.disableYellowBox = true;
+
 // App init
 type Props = {};
 export default class App extends Component<Props> {

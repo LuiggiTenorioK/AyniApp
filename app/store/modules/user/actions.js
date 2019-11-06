@@ -13,9 +13,11 @@ export function getUser(id, token) {
     return {
         types: [GET_USER, GET_USER_SUCCESS, GET_USER_FAIL],
         promise: {
-            url: url+'api/users/'+id.toString(),
+            url: 'api/users/'+id.toString(),
             method: 'GET',
-            headers: headers
+            headers: {
+                'Authorization': 'Basic ' +  Buffer.from(token + ":" + "unused").toString('base64')
+            }
         }
     }
 }

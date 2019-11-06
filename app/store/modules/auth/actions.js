@@ -8,12 +8,9 @@ export function login(data) {
     return {
         types: [LOGIN, LOGIN_SUCCESS, LOGIN_FAIL],
         promise: {
-            url: url+'api/login',
+            url: 'api/login',
             method: 'POST',
-            body: JSON.stringify(data),
-            headers:{
-                'Content-Type': 'application/json'
-            }
+            data: data
         }
     }
 }
@@ -26,12 +23,9 @@ export function signup(data) {
     return {
         types: [SIGNUP, SIGNUP_SUCCESS, SIGNUP_FAIL],
         promise: {
-            url: url+'api/signup',
+            url: 'api/signup',
             method: 'POST',
-            body: JSON.stringify(data),
-            headers:{
-                'Content-Type': 'application/json'
-            }
+            body: data,
         }
     }
 }
@@ -54,12 +48,9 @@ export function verifyToken(data) {
     return {
         types: [VERIFYTOKEN, VERIFYTOKEN_SUCCESS, VERIFYTOKEN_FAIL],
         promise: {
-            url: url+'api/verifyToken',
+            url: 'api/verifyToken',
             method: 'POST',
-            body: JSON.stringify(data),
-            headers:{
-                'Content-Type': 'application/json'
-            }
+            data: data
         }
     }
 }
