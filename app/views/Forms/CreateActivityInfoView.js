@@ -4,6 +4,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import HelpInfo from '../../components/Activities/HelpInfo';
 import PurpleNavigationButton from '../../components/Activities/PurpleNavigationButton';
 
+
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 export default class CreateActivityInfoView extends Component{

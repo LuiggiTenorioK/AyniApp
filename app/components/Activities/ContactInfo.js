@@ -8,10 +8,13 @@ export default class ContactInfo extends Component{
       return (
           <View style={styles.contanctInfoContainer}>
             <Text style= {styles.contanctInfoText}>{this.props.message}</Text>
-            <View style={{width:'60%'}}>
-            <Input 
-            inputStyle= {styles.contanctInfoTextInput}  
-            inputContainerStyle={styles.inputContainer}/>
+            <View style={{width:'70%'}}>
+              <Input 
+              inputStyle= {styles.contanctInfoTextInput}  
+              inputContainerStyle={styles.inputContainer}
+              value={this.props.value}          
+              onChangeText={this.props.handleInput}
+              />
             </View>
           </View>
       )
@@ -23,7 +26,7 @@ const styles = StyleSheet.create({
   contanctInfoContainer: {
     flexDirection:"row",
     justifyContent: 'center',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     backgroundColor: '#ffffff',
     width:'100%',
   },
@@ -31,8 +34,8 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     color: '#343F4B',
     marginVertical: 6,
-    fontSize: 12,
-    width:'40%',
+    fontSize: 14,
+    width:'30%',
     padding:10,
     fontFamily: 'Lato-Regular',
     
@@ -41,8 +44,9 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     color: '#343F4B',
     marginVertical: 6,
-    fontSize: 12,
-    padding:10,
+    fontSize: 14,
+    paddingHorizontal:15,
+    paddingVertical:10,
     fontFamily: 'Lato-Regular',
     borderWidth: 2,  
     borderColor: '#18C4B4',
