@@ -25,7 +25,7 @@ export function signup(data) {
         promise: {
             url: 'api/signup',
             method: 'POST',
-            body: data,
+            data: data,
         }
     }
 }

@@ -11,7 +11,7 @@ class UserView extends Component{
 
     constructor(props) {
       super(props);
-      this.props.getUserDispatch(navigation.getParam('idUser',-1),this.props.token);
+      //this.props.getUserDispatch(navigation.getParam('idUser',-1),this.props.token);
       this.props.navigation.setParams({headerTitle: this.props.username});
     }
 
