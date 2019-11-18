@@ -7,7 +7,7 @@ import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import OrgProjects from '../../components/Organization/OrgProjects';
 import ProjActivities from '../../components/Project/ProjActivities';
 
-import OrgCard from '../../components/Organization/OrgCard';
+import MyOrgs from '../../components/Organization/MyOrgs';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
@@ -16,7 +16,7 @@ class MyActivitiesView extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            index: 0,
+            index: props.navigation.getParam('idx',0),
             routes: [
                 { key: 'first', title: 'Actividades' },
                 { key: 'second', title: 'Proyectos' },
@@ -74,9 +74,13 @@ class MyActivitiesView extends Component {
                         ),
                         third: () => (
                             <View onLayout={this.setHeight()}>
-                                <View style={{ width: Dimensions.get('window').width, padding: 15, alignItems: 'stretch' }}>
-                                    <OrgCard name={'Prismatic'} username={'Prismatic'} profileImgURL={'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRSN7dRBbNBB7TfL7f7IEkM_MYoTfWvXgnq5GpBb2OsWQpKzZDC'}></OrgCard>
+                                <View style={styles.container}>
+                                    <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('CreateOrganization')}>
+                                        <Icon name="md-add-circle-outline" size={30} color="#ffffff" />
+                                        <Text style={styles.buttonText}> Crear Organización</Text>
+                                    </TouchableOpacity>
                                 </View>
+                                <MyOrgs/>
                             </View>
                         ),
                     })}

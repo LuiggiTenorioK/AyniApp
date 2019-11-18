@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, View, Dimensions} from 'react-native';
+import { Image, StyleSheet, View, Dimensions, Text} from 'react-native';
 import {connect} from 'react-redux';
 
 const wait = (ms) => {
@@ -22,11 +22,22 @@ class SplashView extends Component {
             this.props.verifyToken(this.props.token);
             if (this.props.isSignIn){
                 this.props.navigation.navigate('Home');
-            }else{
-                this.props.navigation.navigate('Auth');
             }
+            //else{
+            //     this.props.navigation.navigate('Auth');
+            // }
         }else{
             this.props.navigation.navigate('Auth');
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.isSignIn !== prevProps.isSignIn) {
+            if (this.props.isSignIn){
+                this.props.navigation.navigate('Home');
+            }else{
+                this.props.navigation.navigate('Auth');
+            }    
         }
     }
 

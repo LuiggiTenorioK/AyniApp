@@ -1,57 +1,78 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, ActivityIndicator, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 
 import { login } from '../../store/modules/auth/actions';
 
 
 class LoginView extends Component {
-    state = {
-        email: "",
-        password: "",
-    };
+
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            email: "",
+            password: "",
+            isLoading: false
+        }
+
+    }
+
 
     sendLogin = () => {
+        this.setState({isLoading:true});
         this.props.loginDispatch({
             email: this.state.email,
             password: this.state.password,
             remember: false
         });
+        this.setState({isLoading:false});
+    };
+
+    componentDidUpdate(prevProps) {
         if (this.props.isSignIn) {
             this.props.navigation.navigate('Home');
         }
-    };
+    }
 
     render() {
         return (
-            <View style={{ ...styles.centerContainer, flex: 1, alignItems: 'stretch', padding: 25 }}>
-                <Text style={styles.text}>Email:</Text>
-                <TextInput style={styles.textInput}
-                    onChangeText={(text) => this.setState({ email: text })}
-                    placeholder="Email"
-                    keyboardType="email-address"
-                    onSubmitEditing={() => this.passwordTextInput.focus()}
-                />
-                <Text style={styles.text}>Contraseña:</Text>
-                <TextInput style={styles.textInput}
-                    onChangeText={(text) => this.setState({ password: text })}
-                    placeholder="Contraseña"
-                    secureTextEntry={true}
-                    ref={(input) => this.passwordTextInput = input}
-                />
+            <ScrollView>
+                <View style={{ ...styles.centerContainer, flex: 1, alignItems: 'stretch', padding: 25 }}>
+                    <Text style={styles.text}>Email:</Text>
+                    <TextInput style={styles.textInput}
+                        onChangeText={(text) => this.setState({ email: text })}
+                        placeholder="Email"
+                        keyboardType="email-address"
+                        autoCapitalize='none'
+                        onSubmitEditing={() => this.passwordTextInput.focus()}
+                    />
+                    <Text style={styles.text}>Contraseña:</Text>
+                    <TextInput style={styles.textInput}
+                        onChangeText={(text) => this.setState({ password: text })}
+                        placeholder="Contraseña"
+                        secureTextEntry={true}
+                        ref={(input) => this.passwordTextInput = input}
+                        onSubmitEditing={() => this.sendLogin()}
+                    />
 
-                <TouchableOpacity style={styles.button} onPress={() => this.sendLogin()} >
-                    <Text style={styles.buttonText}>Entrar</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Signup')} >
-                    <Text style={styles.buttonText}>Registrate</Text>
-                </TouchableOpacity>
-                {this.state.isFetching &&
-                    <View>
-                        <ActivityIndicator size='large' />
-                    </View>
-                }
-            </View>
+                    <TouchableOpacity disabled={this.state.isLoading} style={styles.button} onPress={() => this.sendLogin()} >
+                    {this.state.isLoading?
+                        <View>
+                            <ActivityIndicator size='large' />
+                        </View>
+                        :
+                        <Text style={styles.buttonText}>Entrar</Text>
+                    }
+                        
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Signup')} >
+                        <Text style={styles.buttonText}>Registrate</Text>
+                    </TouchableOpacity>
+                    
+                </View>
+            </ScrollView>
+
         )
     }
 }
