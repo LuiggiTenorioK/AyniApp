@@ -17,7 +17,7 @@ class ActHeader extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={{height:Header.HEIGHT}}></View>
+                <View style={{height:Header.HEIGHT/2}}></View>
                 <View style={{margin: Dimensions.get('window').height * 0.02,...styles.rowContainer}}>
                     <View style={{ flex: 3 ,...styles.rowContainer}}>
                         <Text numberOfLines={2} style={styles.title}>{this.state.name}</Text>
@@ -25,9 +25,10 @@ class ActHeader extends Component {
                     <View style={{ flex: 2, flexDirection:'column-reverse'}}>
                         <Text style={styles.text}>{'Por @'+this.state.organizer}</Text>
                         <Text style={styles.text}>Actividad promovida por</Text>
+                    
                     </View>
                 </View>
-                <View style={{flexDirection: 'row-reverse', justifyContent:'flex-start',alignItems:'center', margin:10}}>
+                <View style={{flexDirection: 'row-reverse', justifyContent:'flex-start',alignItems:'center', marginHorizontal:10, marginBottom:20}}>
                     <InscriptionButton message ={'Postular'} />
                     <Hashtag message ={'medioambiente'} /> 
                     <Hashtag message ={'reciclaje'} />          
@@ -41,10 +42,11 @@ export default ActHeader;
 
 const styles = StyleSheet.create({
     container: {
-        height: Dimensions.get('window').height * 0.30,
+        height: Dimensions.get('window').height * 0.25,
         width: Dimensions.get('window').width,
         backgroundColor: '#18C4B4',
-        marginBottom:-20
+        marginBottom:-20,
+        justifyContent: 'space-around',
     },
     rowContainer: {
         flexDirection: 'row',

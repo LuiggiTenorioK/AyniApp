@@ -15,7 +15,7 @@ class CarouselItem extends Component {
                         <Text numberOfLines={2} style={styles.descriptionText}>{this.props.description}</Text>
                     </View>
                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 10 }}>
-                        <TouchableOpacity style={styles.moreButton} onPress={() => this.props.navigation.navigate('Configuration')} >
+                        <TouchableOpacity style={styles.moreButton} onPress={() =>this.props.navigation.navigate('Activity')} >
                             <Icon name="ios-arrow-forward" size={Dimensions.get('window').height / 16} color="#ffffff"/>
                         </TouchableOpacity>
                     </View>

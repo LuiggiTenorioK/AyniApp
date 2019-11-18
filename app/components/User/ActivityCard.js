@@ -28,10 +28,11 @@ export default class ActivityCard extends Component{
 const styles = StyleSheet.create({
     card: {
         height:160,
-        borderRadius:10,
-        backgroundColor:'#7cd7d7',
+        borderRadius:20,
+        backgroundColor:'#18C4B4',
         marginVertical:5,
         flexDirection: 'row',
+        elevation: 5
     },
     image:{
         flex:1,

@@ -8,14 +8,14 @@ export default class UserHeader extends Component {
         return (
             <View>
                 <View style={{ flexDirection: 'row', alignItems:'center',justifyContent:'center'}}>
-                    <Text style={styles.title} >{this.props.selectedUser ? this.props.selectedUser.name : 'No Name'}</Text>
+                    <Text style={styles.title} >{this.props.selectedUser ? this.props.selectedUser.name : 'Luiggi Tenorio'}</Text>
                     <Icon style={{ marginHorizontal: 5 }} name={'ios-checkmark-circle'} size={20} color={'#77D353'} />
                 </View>
-                <Text style={styles.text} >{this.props.selectedUser ? '@' + this.props.selectedUser.username : 'No Username'}</Text>
+                <Text style={styles.text} >{this.props.selectedUser ? '@' + this.props.selectedUser.username : '@lbitGreen'}</Text>
 
                 <UserBox></UserBox>
 
-                <Text style={styles.text}>{this.props.selectedUser ? this.props.selectedUser.description : 'No hay descripción'}</Text>
+                <Text style={styles.text}>{this.props.selectedUser ? this.props.selectedUser.description : 'Heal the world!'}</Text>
             </View>
         )
     }
@@ -32,8 +32,9 @@ const styles = StyleSheet.create({
     text: {
         textAlign: 'center',
         color: '#444444',
-        fontSize: 14,
+        fontSize: 16,
         fontFamily: 'Lato-Regular',
-        marginBottom: 5
+        marginVertical: 10,
+        letterSpacing: 1
     }
 });
