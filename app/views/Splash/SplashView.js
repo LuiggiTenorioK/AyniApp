@@ -17,7 +17,7 @@ class SplashView extends Component {
     tokenVerification = () => {
         // for testing
         //this.props.navigation.navigate('Organization');
-        wait(100);
+        wait(500);
         if (this.props.isSignIn){
             this.props.verifyToken(this.props.token);
             if (this.props.isSignIn){
@@ -44,7 +44,7 @@ class SplashView extends Component {
     render() {
         return (
             <View style={styles.container} onLayout={()=>this.tokenVerification()}>
-                <Image style={styles.logo} source={require('../../assets/images/round_logo.png')}></Image>
+                <Image style={styles.logo} source={require('../../assets/images/ayni_round_logo.png')}></Image>
             </View>
         )
     }
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     logo: {
-        width: Dimensions.get('window').width*0.8,
-        height: Dimensions.get('window').width*0.8
+        width: Dimensions.get('window').width*0.7,
+        height: Dimensions.get('window').width*0.7
     }
 });

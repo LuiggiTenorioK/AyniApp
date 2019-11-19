@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     titleText: {
-        textAlign: 'justify',
+        textAlign: 'left',
         color: '#ffffff',
         fontSize: 16,
         fontFamily: 'Lato-Bold',

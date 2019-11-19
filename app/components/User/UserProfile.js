@@ -23,8 +23,9 @@ export default class UserProfile extends Component {
                     :
                     (<Text>No hay actividades recientes</Text>)
                     */}
+                <ActivityCard title="Monitoreo y Vigilancia de Árboles - Ucayali" description="Apoya a los guarda bosque de una concesion de conservacion por la vigilencia y el monitoreo" previewImage={'https://www.cec.org.co/sites/default/files/sembraton%201.jpg'}/>
                 <ActivityCard title="Tutores de vida" description="Un programa de educación de Fundación Educa2" previewImage={'https://edu.google.com/images/social_image.jpg'} />
-                <ActivityCard title="Campaña para doggos" description="Ante la duda el que más ayuda, lallalalla asdfasdfasdfasdfasd asfsadfasdf" previewImage={'https://images-na.ssl-images-amazon.com/images/I/81cneGCkDmL.jpg'} />
+                <ActivityCard title="Campaña para doggos" description="Ante la duda el que más ayuda" previewImage={'https://images-na.ssl-images-amazon.com/images/I/81cneGCkDmL.jpg'} />
                 <View style={{ paddingBottom: 20 }}></View>
             </ScrollView>
         )

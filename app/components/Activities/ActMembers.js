@@ -13,14 +13,14 @@ export default class ActMembers extends Component{
             <View style={{alignItems:'center'}}>
             {this.props.activity.organizers.map( organizer => (
                     <OrganizerCard key={organizer.id} name={organizer.name} 
-                    username={organizer.username}/>))}
+                    username={organizer.username} img={organizer.img}/>))}
             </View>
             
             <Text style= {styles.text}>Voluntarios</Text>
             <View style={{alignItems:'center'}}>    
             {this.props.activity.volunteers.map( volunteer => (
                     <VolunteerCard key={volunteer.id} name={volunteer.name} 
-                    username={volunteer.username}/>))}
+                    username={volunteer.username} img={volunteer.img}/>))}
             </View>
 
         </View>

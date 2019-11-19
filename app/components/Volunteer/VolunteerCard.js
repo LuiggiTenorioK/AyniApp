@@ -11,7 +11,7 @@ class VolunteerCard extends Component {
         return (
             <TouchableOpacity style={{ ...styles.card }}>
                 <View style={{ flex: 2,alignItems: 'center',justifyContent:'center'}}>
-                    <Image style= {styles.profilePhotoRound} source={img}></Image>
+                    <Image style= {styles.profilePhotoRound} source={this.props.img?{uri: this.props.img}:img}></Image>
                 </View>
                 <View style={{ flex: 3, alignItems: 'stretch',justifyContent:'center'}}>
                     <Text style={{...styles.text}}>{this.props.name}</Text>

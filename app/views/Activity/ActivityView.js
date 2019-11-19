@@ -32,10 +32,10 @@ class ActivityView extends Component {
         contactNumber: '951888908',
         contactEmail:'lbit@gmail.com',
         contactAddress: 'Calle San Luis 679',
-        organizers: [{id:'1',name:'Luiggi Tenorio', username:'lbitgreen'},
+        organizers: [{id:'1',name:'Luiggi Tenorio', username:'lbitgreen', img:''},
         {id:'2',name:'Arian Gallardo', username:'ecofroz'}],
-        volunteers: [{id:'1',name:'Moshe Ojeda', username:'moshe'},
-        {id:'2',name:'Daniel Alpiste', username:'daniel'}],
+        volunteers: [{id:'1',name:'Moshe Ojeda', username:'moshe', img:'https://scontent.flim9-1.fna.fbcdn.net/v/t1.0-9/60333966_3005076362843118_7309230646331703296_n.jpg?_nc_cat=103&_nc_oc=AQkR2A9ZMC9dRmJvDVIaez4Zw4UEioZg2UcufmTMt5SoObOf_4LH9RlBJap5ZXKaV2o&_nc_ht=scontent.flim9-1.fna&oh=b10d7290520c3ec330861c8b4dfee020&oe=5DD31050'},
+        {id:'2',name:'Daniel Alpiste', username:'daniel', img:'https://i0.wp.com/metro.co.uk/wp-content/uploads/2018/03/red-nose-pitbull-1-e1520600821708.jpg?quality=90&strip=all&zoom=1&resize=644%2C548&ssl=1'}],
         news:[{id:'1',name:'Luiggi Tenorio', username:'lbitgreen',
         description:'Nuestro programa comienza en dos semanas! Aún puedes participar, si tienes alguna duda, puedes ecribirme a través del chat de Ayni :)',
         role:'ORGANIZADOR'}]

@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         borderRadius:15,
     },
     titleText:{
-        textAlign: 'justify',
+        textAlign: 'left',
         color: '#ffffff',
         fontSize:18,
         fontFamily: 'Lato-Bold',

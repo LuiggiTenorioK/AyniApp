@@ -8,8 +8,24 @@ class ProjActivities extends Component {
     [
         {
             id:1,
+            title: "Monitoreo y Vigilancia de Árboles - Ucayali",
+            description: "Apoya a los guarda bosque de una concesion de conservacion por la vigilencia y el monitoreo",
+            organizer: "lbitGreen"
+        },
+        {
+            id:2,
+            title: "Tutores de vida",
+            description: "Un programa de educación de Fundación Educa2",
+            organizer: "alpiste"
+        },
+    ]; 
+
+    data2 = 
+    [
+        {
+            id:1,
             title: "Campaña para doggos",
-            description: "Ante la duda el que más ayuda, lallalalla asdfasdfasdfasdfasd asfsadfasdf",
+            description: "Ante la duda el que más ayuda",
             organizer: "lbitGreen"
         },
         {
@@ -22,7 +38,7 @@ class ProjActivities extends Component {
             id:3,
             title: "Tutores de vida",
             description: "Un programa de educación de Fundación Educa2",
-            organizer: "analiste"
+            organizer: "alpiste"
         },
     ]; 
 
@@ -37,7 +53,7 @@ class ProjActivities extends Component {
                        passed={false} /> ))}
                 
                 <Text style={styles.title}>{'Actividades pasadas'}</Text>
-                {this.data.map( activity => (
+                {this.data2.map( activity => (
                     <ActivityCard key={activity.id} id={activity.id} title={activity.title} 
                         description={activity.description} organizer={activity.organizer} 
                         passed={true} />))}
