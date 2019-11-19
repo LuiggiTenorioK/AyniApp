@@ -17,7 +17,7 @@ class NewsCard extends Component {
                 </View>
                 <View style={{alignItems:'center', margin:5}}>
                     
-                    <Image style= {styles.image} source={img}></Image>    
+                    <Image style= {styles.image} source={{ uri: this.props.previewImage }}></Image>    
                     <View style={styles.box} >
                         <NewsInfo key ={this.props.id} name={this.props.name}
                         username={this.props.username}

@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     borderRadius:10,
     backgroundColor:'#F7F7F7',
     height: Dimensions.get('window').height * 0.03,
-    width: '27%',
+    width: 120,
     padding:10,
     elevation:3,
     margin:5

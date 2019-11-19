@@ -14,10 +14,10 @@ export default class HeaderCarousel extends Component {
                         <CarouselItem title="Tutores de vida" description="Un programa de educación de Fundación Educa2" previewImage={'https://edu.google.com/images/social_image.jpg'} />
                     </View>
                     <View>
-                        <CarouselItem title="Campaña para doggos" description="Ante la duda el que más ayuda, lallalalla asdfasdfasdfasdfasd asfsadfasdf" previewImage={'https://images-na.ssl-images-amazon.com/images/I/81cneGCkDmL.jpg'} />
+                        <CarouselItem title="Albergue para Perros" description="Visita el albergue para perros ubicado en Chorrillos" previewImage={'https://static4.abc.es/media/sociedad/2016/07/04/PERRO-ABANDONADO-kNKD--620x349@abc.jpg'} />
                     </View>
                     <View>
-                        <CarouselItem title="Campaña para doggos 2 - La revelación de los parques" description="Ahora sin gatos asdfasdfasdfasdfasdf" previewImage={'https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg'} />
+                        <CarouselItem title="Monitoreo y Vigilancia de Árboles - Ucayali" description="Apoya a los guarda bosque de una concesion de conservacion por la vigilencia y el monitoreo" previewImage={'https://www.cec.org.co/sites/default/files/sembraton%201.jpg'} />
                     </View>
                 </Carousel>
             </View>
