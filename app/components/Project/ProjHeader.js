@@ -8,8 +8,8 @@ import { Header, withNavigation } from 'react-navigation';
 class ProjHeader extends Component {
 
     state = {
-        name: 'Lima Recicla: Primera Edición',
-        organizer: 'Prismatic'
+        name: 'Prog. Amazonas: Primera Edición',
+        organizer: 'reforesta'
     }
 
 

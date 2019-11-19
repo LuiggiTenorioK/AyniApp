@@ -42,6 +42,8 @@ class MyOrgs extends Component {
     render() {
         return (
             <View style={{ width: Dimensions.get('window').width, padding: 15, alignItems: 'stretch' }}>
+                <OrgCard name={'Reforesta Squad'} username={'reforesta'} 
+                        profileImgURL={'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRSN7dRBbNBB7TfL7f7IEkM_MYoTfWvXgnq5GpBb2OsWQpKzZDC'}></OrgCard>
                 {this.state.organizaciones.map((org) =>
                     <OrgCard name={org.name} username={org.reference_1} 
                         profileImgURL={org.image_direction}></OrgCard>

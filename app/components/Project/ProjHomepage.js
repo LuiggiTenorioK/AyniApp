@@ -11,10 +11,10 @@ class ProjHomepage extends Component {
         return (
             <View style={styles.container}>
                 <View style={{ ...styles.image, marginVertical: 15 }}>
-                    <Image style={styles.image} source={{ uri: 'https://i.kinja-img.com/gawker-media/image/upload/s--NfTjhyTF--/c_scale,f_auto,fl_progressive,q_80,w_800/csmo9py2a20pgyr3ee0v.jpg' }}></Image>
+                    <Image style={styles.image} source={{ uri: 'https://sfo2.digitaloceanspaces.com/elpaiscr/2019/07/R%C3%ADo-Amazonas.-Redes.jpg' }}></Image>
                 </View>
-                <Text style={styles.title}>{'Insertar eslogan'}</Text>
-                <Text style={styles.text}>{'Descripción del proyecto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in finibus arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam lacinia elit nec tortor vulputate, ac suscipit orci tincidunt. Integer vel sapien luctus, laoreet mauris quis, sagittis dolor. Integer dolor purus, posuere et libero sed, tincidunt ornare lacus. Nam nunc tortor, facilisis ut purus sed, luctus lacinia leo. Curabitur molestie eu leo a eleifend. Integer convallis, sem ut tristique posuere, nulla risus pretium urna, ut lacinia quam odio at diam.'}</Text>
+                <Text style={styles.title}>{'Proteger lo nuestro'}</Text>
+                <Text style={styles.text}>{'El objetivo de este programa para el futuro del Perú es preservar la reserva natural. La organización se compromete también a procurar alcanzar las metas o resultados establecidos y esperados, generando así un objetivo en común.'}</Text>
 
                 <View style={{ flexDirection: 'row', marginTop: 10 }}>
                     <Text style={{ ...styles.title, flex: 3 }}>{'Aportantes'}</Text>

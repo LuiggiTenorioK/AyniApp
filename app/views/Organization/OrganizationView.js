@@ -30,12 +30,12 @@ class OrganizationView extends Component {
             tabHeight: SCREEN_HEIGHT*0.75-50,
         }
         this.setHeight = this.setHeight.bind(this)
-        this.props.navigation.setParams({ 'title': '@Prismatic' })
+        this.props.navigation.setParams({ 'title': '@reforesta' })
     }
 
     componentWillUpdate(nextProps, nextState) {
-        if (this.props.navigation.getParam('title', '') != '@Prismatic')
-            this.props.navigation.setParams({ 'title': '@Prismatic' })
+        if (this.props.navigation.getParam('title', '') != '@reforesta')
+            this.props.navigation.setParams({ 'title': '@reforesta' })
     }
 
     setHeight = () => event => {

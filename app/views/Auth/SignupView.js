@@ -7,26 +7,27 @@ import { signup } from '../../store/modules/auth/actions';
 class SignupView extends Component {
 
     state = {
-        email: "",
-        password: "",
-        name: "",
-        username: "",
-        confirmPassword: "",
+        email: "moshe.ojeda@pucp.edu.pe",
+        password: "Abc123.",
+        name: "Moshe Ojeda",
+        username: "moshe.exe",
+        confirmPassword: "Abc123.",
         isLoading: false
     };
 
     sendSignup = () => {
-        this.setState({isLoading:true});
-        this.props.signupDispatch({
-            email: this.state.email,
-            password: this.state.password,
-            name: this.state.name,
-            username: this.state.username
-        });
-        // if (this.props.isSignIn) {
-        //     this.props.navigation.navigate('Home');
-        // }
-        this.setState({isLoading:false});
+        this.props.navigation.navigate('SelectInterest');
+        // this.setState({isLoading:true});
+        // this.props.signupDispatch({
+        //     email: this.state.email,
+        //     password: this.state.password,
+        //     name: this.state.name,
+        //     username: this.state.username
+        // });
+        // // if (this.props.isSignIn) {
+        // //     this.props.navigation.navigate('Home');
+        // // }
+        // this.setState({isLoading:false});
     };
 
     componentDidUpdate(prevProps) {
@@ -46,6 +47,7 @@ class SignupView extends Component {
                         onChangeText={(text) => this.setState({ name: text })}
                         placeholder="Nombre completo"
                         onSubmitEditing={() => this.usernameTextInput.focus()}
+                        value={this.state.name}
                     />
                     <Text style={styles.text}>Nombre de usuario:</Text>
                     <TextInput style={styles.textInput}
@@ -54,6 +56,7 @@ class SignupView extends Component {
                         autoCapitalize='none'
                         onSubmitEditing={() => this.emailTextInput.focus()}
                         ref={(input) => this.usernameTextInput = input}
+                        value={this.state.username}
                     />
                     <Text style={styles.text}>Email:</Text>
                     <TextInput style={styles.textInput}
@@ -63,6 +66,7 @@ class SignupView extends Component {
                         autoCapitalize='none'
                         onSubmitEditing={() => this.passwordTextInput.focus()}
                         ref={(input) => this.emailTextInput = input}
+                        value={this.state.email}
                     />
                     <Text style={styles.text}>Contraseña:</Text>
                     <TextInput style={styles.textInput}
@@ -72,6 +76,7 @@ class SignupView extends Component {
                         autoCapitalize='none'
                         onSubmitEditing={() => this.confirmPasswordTextInput.focus()}
                         ref={(input) => this.passwordTextInput = input}
+                        value={this.state.password}
                     />
                     <Text style={styles.text}>Confirma contraseña:</Text>
                     <TextInput style={{ ...styles.textInput, borderColor: this.state.password === this.state.confirmPassword ? '#18C4B4' : 'red' }}
@@ -80,8 +85,9 @@ class SignupView extends Component {
                         secureTextEntry={true}
                         autoCapitalize='none'
                         ref={(input) => this.confirmPasswordTextInput = input}
+                        value={this.state.confirmPassword}
                     />
-                    <TouchableOpacity disabled={this.state.isLoading} s style={styles.button} onPress={() => this.sendSignup()} >
+                    <TouchableOpacity disabled={this.state.isLoading} style={styles.button} onPress={() => this.sendSignup()} >
                         <Text style={styles.buttonText}>Registrate</Text>
                     </TouchableOpacity>
                     {this.state.isFetching &&

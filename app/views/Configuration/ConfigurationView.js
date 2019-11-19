@@ -14,8 +14,8 @@ class ConfigurationView extends Component{
             <View style={{alignItems:'stretch'}}>
                 {/*<Text style={styles.text} onPress={() =>this.props.navigation.navigate('Login')}>Login</Text>
                 <View style={{backgroundColor:'#cccccc', height:2}}></View>*/}
-                <Text style={styles.text} onPress={() =>this.props.navigation.navigate('Organization')}>{'Mi Organización'}</Text>
-                <View style={{backgroundColor:'#cccccc', height:2}}></View>
+                {/*<Text style={styles.text} onPress={() =>this.props.navigation.navigate('Organization')}>{'Mi Organización'}</Text>
+                <View style={{backgroundColor:'#cccccc', height:2}}></View>*/}
                 <Text style={{...styles.text,color: '#8B0000',}} onPress={()=>this.pressLogout()}>Salir</Text>
             </View>
         )

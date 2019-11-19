@@ -10,8 +10,8 @@ class OrgHomepage extends Component {
                 <View style={{ ...styles.image, marginVertical: 15 }}>
                     <Image style={styles.image} source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTejBLKBcww2McB3ZwMFKgHydrhuHV1OTL2UO7_6CG56tULhW7Y' }}></Image>
                 </View>
-                <Text style={styles.title}>{'Insertar eslogan'}</Text>
-                <Text style={styles.text}>{'Descripción del proyecto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in finibus arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam lacinia elit nec tortor vulputate, ac suscipit orci tincidunt. Integer vel sapien luctus, laoreet mauris quis, sagittis dolor. Integer dolor purus, posuere et libero sed, tincidunt ornare lacus. Nam nunc tortor, facilisis ut purus sed, luctus lacinia leo. Curabitur molestie eu leo a eleifend. Integer convallis, sem ut tristique posuere, nulla risus pretium urna, ut lacinia quam odio at diam.'}</Text>
+                <Text style={styles.title}>{'Plant the planet!'}</Text>
+                <Text style={styles.text}>{'Creada en marzo 2011, Reforesta Squad es una asociación sin fin de lucro. Su objetivo es la preservación del bosque y de la biodiversidad, en países menos desarrollados y en Francia, con la población local, para favorecer iniciativas de preservación y ayudarlos a desarrollar nuevas alternativas económicas a la deforestación.'}</Text>
             </View>
         )
     }

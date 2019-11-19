@@ -6,7 +6,7 @@ class OrgHeader extends Component {
 
     state = {
         profileImgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRSN7dRBbNBB7TfL7f7IEkM_MYoTfWvXgnq5GpBb2OsWQpKzZDC',
-        name: 'Prismatic',
+        name: 'Reforesta Squad',
         type: 'ONG'
     }
 

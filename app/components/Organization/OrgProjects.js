@@ -12,16 +12,26 @@ class OrgActivities extends Component {
     [
         {
             id:1,
-            title: "Lima Recicla: Primera Edición",
-            description: "Un proyecto sin igual ",
+            title: "Programa Amazonas: Primera Edición",
+            description: "El objetivo de este programa para el futuro del Perú es preservar la reserva natural",
             organizer: "lbitGreen"
+        },
+    ]; 
+    
+    data2 = 
+    [
+        {
+            id:1,
+            title: "Lima Unida ante la deforestación",
+            description: "Ante la duda el que más ayuda",
+            organizer: "moshe.exe"
         },
         {
             id:2,
-            title: "Lima Unida",
-            description: "Ante la duda el que más ayuda, lallalalla asdfasdfasdfasdfasd asfsadfasdf",
-            organizer: "moshe.exe"
-        },
+            title: "Lima Recicla: Primera Edición",
+            description: "Un proyecto sin igual ",
+            organizer: "lbitGreen"
+        }, 
     ]; 
 
     constructor(props) {
@@ -84,12 +94,16 @@ class OrgActivities extends Component {
             <View style={styles.container}>
 
                 <Text style={styles.title}>{'Proyectos recientes'}</Text>
+                {this.data.map(activity => (
+                    <ProjectCard key={activity.id} id={activity.id} title={activity.title}
+                        description={activity.description} organizer={activity.organizer} passed={false} />))}
+
                 {this.state.proyectos.map(activity => (
                     <ProjectCard key={activity.id} id={activity.id} title={activity.name}
                         description={activity.name} organizer={activity.organization_id} passed={false} />))}
 
                 <Text style={styles.title}>{'Proyectos pasados'}</Text>
-                {this.data.map(activity => (
+                {this.data2.map(activity => (
                     <ProjectCard key={activity.id} id={activity.id} title={activity.title}
                         description={activity.description} organizer={activity.organizer} passed={true} />))}
 

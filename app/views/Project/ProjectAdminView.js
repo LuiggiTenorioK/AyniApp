@@ -10,7 +10,7 @@ class ProjectAdminView extends Component {
 
     admView = [
         {
-            title: 'LISTA DE ACTIVIDADES',
+            title: 'LISTA DE TAREAS',
             color: '#00A6FF'
         },
         {
@@ -50,14 +50,14 @@ class ProjectAdminView extends Component {
                     style={styles.textInput}
                     onChangeText={(text) => this.setState({ name: text })}
                     placeholder="Define el nombre de tu actividad"
-                    value='Lima Recicla: Primera Edición'
+                    value='Prog. Amazonas: Primera Edición'
                 />
                 <Text style={{ ...styles.text, fontSize: 14 }}>Eslogan del Proyecto</Text>
                 <TextInput
                     style={styles.textInput}
                     onChangeText={(text) => this.setState({ name: text })}
                     placeholder="Define el eslogan de tu actividad"
-                    value='Insertar eslogan'
+                    value='Proteger lo nuestro'
                 />
                 <Text style={{ ...styles.text, fontSize: 14 }}>Descripción</Text>
                 <TextInput
@@ -65,7 +65,7 @@ class ProjectAdminView extends Component {
                     multiline={true}
                     onChangeText={(text) => this.setState({ description: text })}
                     placeholder="Empieza con una frase inspiradora, define cual es el alcance y objetivo de tu actividad."
-                    value = 'Descripción del proyecto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in finibus arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam lacinia elit nec tortor vulputate, ac suscipit orci tincidunt. Integer vel sapien luctus, laoreet mauris quis, sagittis dolor. Integer dolor purus, posuere et libero sed, tincidunt ornare lacus. Nam nunc tortor, facilisis ut purus sed, luctus lacinia leo. Curabitur molestie eu leo a eleifend. Integer convallis, sem ut tristique posuere, nulla risus pretium urna, ut lacinia quam odio at diam.'
+                    value = 'El objetivo de este programa para el futuro del Perú es preservar la reserva natural. La organización se compromete también a procurar alcanzar las metas o resultados establecidos y esperados, generando así un objetivo en común.'
                 />
             </ScrollView>
         )
