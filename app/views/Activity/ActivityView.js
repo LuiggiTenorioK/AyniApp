@@ -27,7 +27,7 @@ class ActivityView extends Component {
     };
 
     activity={
-        description : 'Todos los días nuestro equipo de trabajo se encarga de recolectar las donaciones y material de reciclaje a domicilio con una llamada podemos acercar a tu casa oficina o lugar de trabajo a hacer la recolección sin costo alguno totalmente gratis ',
+        description : 'Apoya a los guardabosques de una concesión de conservación por la vigilancia y el monitoreo de una zona de protección de 40 000 ha de bosques amazonicos. La misión se desarolla en aislamiento y en condiciones de vida muy básicas.',
         contactName:'Luiggi Tenorio',
         contactNumber: '951888908',
         contactEmail:'lbit@gmail.com',
@@ -99,8 +99,8 @@ const styles = StyleSheet.create({
         fontSize: 12
     },
     indicatorStyle: {
-        height: 0,
-        overflow: 'hidden',
+        height: 2,
+        backgroundColor: '#6C28E1' ,
     },
     tabBarStyle: {
         backgroundColor: '#ffffff',

@@ -14,7 +14,7 @@ export default class ActNews extends Component{
             username={x.username}
             description={x.description}
             role={x.role}
-            previewImage={'https://images-na.ssl-images-amazon.com/images/I/81cneGCkDmL.jpg'}/>))}
+            previewImage={'https://www.eluniversal.com.mx/sites/default/files/styles/f03-651x400/public/2018/02/16/amazonia_peruana_mitos_peru_viajes_destinos_c.jpg?itok=ajtKp_et&c=7062534651cdf37eb1d7bbc847882ab5'}/>))}
         </View>
       )
     }

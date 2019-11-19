@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     titleText: {
         textAlign: 'justify',
         color: '#ffffff',
-        fontSize: 18,
+        fontSize: 16,
         fontFamily: 'Lato-Bold',
         margin: 10
     },

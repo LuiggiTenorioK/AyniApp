@@ -26,12 +26,18 @@ export default class ExploreView extends Component {
 
                 <Text style={{ ...styles.title, marginTop: 20, marginBottom: 5}}>Actividades destacadas</Text>
                 <View style={{flexWrap:'wrap', flexDirection:'row',marginHorizontal:10}}>
-                    <SquareActivityCard title="Tutores de vida" previewImage={'https://edu.google.com/images/social_image.jpg'}/>
-                    <SquareActivityCard title="Campaña para doggos" previewImage={'https://images-na.ssl-images-amazon.com/images/I/81cneGCkDmL.jpg'} />
-                    <SquareActivityCard title="Campaña para doggos 2 - La revelación de los parques" previewImage={'https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg'} />
-                    <SquareActivityCard title="Tutores de vida" previewImage={'https://edu.google.com/images/social_image.jpg'}/>
-                    <SquareActivityCard title="Campaña para doggos" previewImage={'https://images-na.ssl-images-amazon.com/images/I/81cneGCkDmL.jpg'} />
-                    <SquareActivityCard title="Campaña para doggos 2 - La revelación de los parques" previewImage={'https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg'} />
+                    <SquareActivityCard title="Campaña para el Friaje - Puno" 
+                    previewImage={'https://pbs.twimg.com/media/EAFMQ5mUcAASm_q.jpg'}/>
+                    <SquareActivityCard title="Recojo de Basura en Parques" 
+                    previewImage={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLKfonIO9C08hUuOQ8vYS3fkqnwNnsaTjBoGi0NLQXwSzBgGwU&s'} />
+                    <SquareActivityCard title="Cuidado de perritos abandonados" 
+                    previewImage={'https://blog.oxfamintermon.org/wp-content/uploads/2018/06/voluntariado-con-animales-1.jpg'} />
+                    <SquareActivityCard title="Visita el asilo de tu comunidad" 
+                    previewImage={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIi4sc5Ru3sT5rxgcMw3upD7OOkSYbm22dAchYFCljQoSKq-kn&s'}/>
+                    <SquareActivityCard title="Construcción de viviendas en Ventanilla" 
+                    previewImage={'https://static-a.radiocutivalu.org/wp-content/uploads/2017/07/techo-Per%C3%BA.jpg'} />
+                    <SquareActivityCard title="Colabora en los Juegos Panamericanos Lima 2019" 
+                    previewImage={'https://pbs.twimg.com/media/D_XReozX4AAIk5v?format=jpg&name=small'} />
                 </View>
             </ScrollView>
         )
