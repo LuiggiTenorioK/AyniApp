@@ -64,7 +64,7 @@ class MyActivitiesView extends Component {
                         second: () => (
                             <View onLayout={this.setHeight()}>
                                 <View style={styles.container}>
-                                    <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('Signup')}>
+                                    <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate('CreateProject')}>
                                         <Icon name="md-add-circle-outline" size={30} color="#ffffff" />
                                         <Text style={styles.buttonText}> Crear Proyecto</Text>
                                     </TouchableOpacity>

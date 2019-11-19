@@ -11,58 +11,30 @@ import axiosInstance from '../../store/axios';
 import {Buffer} from 'buffer';
 import { connect } from 'react-redux';
 
-class CreateActivityDescriptionView extends Component{
+class CreateProjectView extends Component{
     state = {
       name :"",
       description:"",
-      contactName:"",
-      contactPhone:"",
-      contactMail:"",
-      contactAddress:"",
+   
       loading:true,
-      selectedProject:0,
+      selectedOrganization:0,
       
-      organizaciones:[]
+      
     };
-    projects=[]
-    componentDidMount() {
-      
-      axiosInstance.post('api/project/get_project_organization',{organizationId:1},
-      { headers: {
-          'Authorization': 'Basic ' +  Buffer.from('gallardo.a@pucp.pe' + ":" + "Casa12345.").toString('base64')
-      }}).then(({ data }) => {
-        console.log(data.listOfProjects);
-        this.projects= [];
-        data.listOfProjects.map(
-          x=>this.projects.push({
-          label: x.name,
-          value: x.id,
-        }))
-        this.setState({loading:false})
-      }).catch(error =>{
-        console.log(error.message);
-      });
-    }
-    handleContactName= (contactName) =>{console.log(contactName);this.setState({contactName:contactName})};
-    handleContactPhone= (contactPhone) =>{this.setState({contactPhone:contactPhone})};
-    handleContactMail= (contactMail) =>{this.setState({contactMail:contactMail})};
-    handleContactAddress= (contactAddress) =>{this.setState({contactAddress:contactAddress})};
+    projects=[];
+    organizations=[]
+
+  
+        
     
-    
-    createActivity = ()=>{
-      var activity ={
-        projectId: 1,
-        title: this.state.name,
-        description:this.state.description,
-        latitude: 12.5687,
-        longitude: 11.5448,
-        contactName: this.state.contactName,
-        telf1: this.state.contactPhone,
-        email1: this.state.contactMail,
-        direction: this.state.contactAddress,
+    createProject = ()=>{
+      var project ={
+        organizationId: 1,
+        name: this.state.name,
+        imageDirection:this.state.description,
         
       }
-      axiosInstance.post('api/activity/create',activity,
+      axiosInstance.post('api/project/create',project,
       { headers: {
           'Authorization': 'Basic ' +  Buffer.from('gallardo.a@pucp.pe' + ":" + "Casa12345.").toString('base64')
       }}).then(({ data }) => {
@@ -73,7 +45,7 @@ class CreateActivityDescriptionView extends Component{
     }
     handleValueChange = value => {
       this.setState({
-        selectedProject: value,
+        selectedOrganization: value,
       });
     };
    
@@ -87,14 +59,14 @@ class CreateActivityDescriptionView extends Component{
       return (
         <ScrollView style={styles.container} >
           
-          <Text style= {styles.text}>Proyecto</Text>
+          <Text style= {styles.text}>Organización</Text>
           <View style={styles.pickerContainer}>
               <Picker
-                items={this.projects}
+                items={this.organizations}
                 onValueChange={this.handleValueChange}
               />
           </View>
-          <Text style= {styles.text}>Nombre de la Actividad</Text>
+          <Text style= {styles.text}>Nombre del Proyecto</Text>
           <Input 
             inputStyle  = {styles.textInput}
             onChangeText={(text) => this.setState({name: text})}
@@ -107,14 +79,8 @@ class CreateActivityDescriptionView extends Component{
               onChangeText={(text) => this.setState({description: text})}
               inputContainerStyle={styles.inputContainer}
           />
-          <Text style= {styles.text}>Contacto</Text>
-          <ContactInfo message={'Nombre de Contacto:'} value ={this.state.contactName} handleInput={this.handleContactName} />
-          <ContactInfo message={'Número de Teléfono:'} value ={this.state.contactPhone} handleInput={this.handleContactPhone} />
-          <ContactInfo message={'Correo Electrónico:'} value ={this.state.contactMail} handleInput={this.handleContactMail} />
-          <ContactInfo message={'Dirección:'} value ={this.state.contactAddress} handleInput={this.handleContactAddress} />
-
-          <View style= {{paddingBottom:20}}></View>
-          <PurpleNavigationButton message ={'CREAR'} function = {this.createActivity} />
+         
+          <PurpleNavigationButton message ={'CREAR'} function = {this.createProject} />
 
           <View style= {{paddingBottom:40}}></View>
         </ScrollView>
@@ -130,7 +96,7 @@ const mapStateToProp = state => {
       idUser: state.auth.idUser
   };
 }
-export default connect(mapStateToProp)(CreateActivityDescriptionView);
+export default connect(mapStateToProp)(CreateProjectView);
 
 const styles = StyleSheet.create({
   inputContainer:{

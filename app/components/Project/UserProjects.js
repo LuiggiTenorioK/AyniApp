@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity,  Dimensions
 import {ScrollView} from 'react-navigation';
 import ProjectCard from '../Project/ProjectCard';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { withNavigation } from 'react-navigation';
 
 class UserProjects extends Component {
     data = 
@@ -24,7 +25,7 @@ class UserProjects extends Component {
     render() {
         return (
                 <View style={styles.container}>
-                    <TouchableOpacity style={styles.button} onPress={() =>this.props.navigation.navigate('CreateActivity')}>
+                    <TouchableOpacity style={styles.button} onPress={() =>this.props.navigation.navigate('CreateProject')}>
                       <Icon name="md-add-circle-outline" size={30} color="#ffffff"/>
                       <Text style = {styles.buttonText}> Crear Proyecto</Text>
                     </TouchableOpacity>
@@ -43,8 +44,7 @@ class UserProjects extends Component {
         )
     }
 };
-
-export default UserProjects;
+export default withNavigation(UserProjects);
 
 const styles = StyleSheet.create({
     container:{

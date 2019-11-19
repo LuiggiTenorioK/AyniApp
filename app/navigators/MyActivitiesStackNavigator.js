@@ -11,6 +11,7 @@ import CreateActivityInfoView from '../views/Forms/CreateActivityInfoView';
 import ProjectView from '../views/Project/ProjectView';
 import ActivityView from '../views/Activity/ActivityView';
 import ProjectAdminView from '../views/Project/ProjectAdminView';
+import CreateProjectView from '../views/Project/CreateProjectView';
 
 export default createStackNavigator({
     MyActivities: {
@@ -63,6 +64,13 @@ export default createStackNavigator({
         screen: ProjectAdminView,
         navigationOptions: {
             title: 'Administrador de Proyecto',
+        }
+    }
+    ,
+    CreateProject: {
+        screen: CreateProjectView,
+        navigationOptions: {
+            title: 'Crear un Proyecto',
         }
     }
 });

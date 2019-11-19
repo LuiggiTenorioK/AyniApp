@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity,  Dimensions} from 'react-native';
 import {ScrollView} from 'react-navigation';
 import ProjectCard from '../Project/ProjectCard';
+import { withNavigation } from 'react-navigation';
 
 class OrgActivities extends Component {
     data = 
@@ -39,7 +40,7 @@ class OrgActivities extends Component {
     }
 };
 
-export default OrgActivities;
+export default withNavigation(OrgActivities);
 
 const styles = StyleSheet.create({
     container:{
